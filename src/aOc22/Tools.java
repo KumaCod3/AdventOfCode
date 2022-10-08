@@ -1,3 +1,5 @@
+package aOc22;
+
 import java.awt.Toolkit;
 
 public class Tools {
