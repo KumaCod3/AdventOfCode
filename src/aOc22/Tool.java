@@ -2,8 +2,12 @@ package aOc22;
 
 import java.awt.Toolkit;
 
-public class Tools {
+public class Tool {
 	
+	// DING DONG
+	public static void bell() {
+		Toolkit.getDefaultToolkit().beep();
+	}
 	// DA BINARIO A DECIMALE
 	public static int binToDec(String a){
 		String[] u=a.split("");
