@@ -1,6 +1,7 @@
 package aOc22;
 
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 public class Tool {
 	
@@ -166,8 +167,14 @@ public class Tool {
 		return false;
 		
 	}
-		
-	static public void rin() {
-		Toolkit.getDefaultToolkit().beep();
+	// LA PAROLA CE?
+	public static boolean check(ArrayList<String> d, String z){
+		boolean ck=true;
+		for (String a:d){
+			if (a.equals(z)){
+				ck=false;
+			}
+		}
+		return ck;
 	}
 }
