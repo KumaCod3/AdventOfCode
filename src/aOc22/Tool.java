@@ -4,7 +4,7 @@ import java.awt.Toolkit;
 
 public class Tool {
 	
-	// DING DONG
+	// DING DONG DANG
 	public static void bell() {
 		Toolkit.getDefaultToolkit().beep();
 	}
