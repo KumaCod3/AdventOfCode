@@ -8,11 +8,18 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Choice;
 import java.awt.TextArea;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.Component;
 import javax.swing.JRadioButton;
+import java.awt.Font;
 
 public class Program {
 
@@ -20,6 +27,10 @@ public class Program {
 	/**
 	 * Launch the application.
 	 */
+	static int day;
+	static int part;
+	static long ris;
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -55,13 +66,37 @@ public class Program {
 		panel.add(lblNewLabel);
 		
 		Choice choice = new Choice();
+		choice.add("Choose");
+		for (int i=1;i<=25;i++) {
+			choice.add("Day "+i);
+		}
+		choice.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e){
+			}
+			public void focusLost(FocusEvent e){
+				day=choice.getSelectedIndex();
+			}
+		});
 		panel.add(choice);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Part 1");
-		panel.add(rdbtnNewRadioButton);
+		JRadioButton day1 = new JRadioButton("Part 1");
+		day1.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent evt) {
+	            part=1;
+	        }
+	    });
+		panel.add(day1);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Part 2");
-		panel.add(rdbtnNewRadioButton_1);
+		JRadioButton day2 = new JRadioButton("Part 2");
+		day2.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent evt) {
+	            part=2;
+	        }
+	    });
+		panel.add(day2);
+		ButtonGroup group = new ButtonGroup();
+	    group.add(day1);
+	    group.add(day2);
 		
 		JPanel panel_1 = new JPanel();
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
@@ -78,9 +113,11 @@ public class Program {
 		frame.getContentPane().add(panel_2, BorderLayout.SOUTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("Your result is:");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel_2.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("XXX");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		panel_2.add(lblNewLabel_2);
 	}
 
