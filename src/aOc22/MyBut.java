@@ -18,18 +18,25 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
 public class MyBut extends JButton{
+	// generali
 	private Color col1=Color.YELLOW;
 	private Color col2=Color.MAGENTA;
 	private Color scri=Color.WHITE;
+	
+	//per OVER
 	private final Timer timer;
 	private float alpha=0.3f;
 	private boolean mouseOver;
+	
+	// per PRESS
 	private final Timer timerPress;
 	private float alphaPress=0.3f;
 	private boolean press;
 	private float pressSize;
 	private Point pressLoc;
-	private float sizeSpeed=1f;
+	
+	// rimpicciolisci per rallentare macchia click
+	private float sizeSpeed=0.5f;
 	
 	public MyBut(String a) {
 		super(a);
@@ -56,7 +63,6 @@ public class MyBut extends JButton{
 				alphaPress=0.5f;
 				press=true;
 				pressLoc=me.getPoint();
-				// aumenta delay per rallentare macchia al click (max 10)
 				timerPress.setDelay(0);
 				timerPress.start();
 				
