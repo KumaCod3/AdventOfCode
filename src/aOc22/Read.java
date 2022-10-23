@@ -29,4 +29,16 @@ public class Read {
 	public ArrayList<String[]> get() {
 		return fin;
 	}
+	
+	
+	//splitta singoli int a capo
+	public static ArrayList<Integer> intList(String s){
+		ArrayList<Integer> lista= new ArrayList<Integer>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			int n=Integer.parseInt(a);
+			lista.add(n);
+		}
+		return lista;
+	}
 }
