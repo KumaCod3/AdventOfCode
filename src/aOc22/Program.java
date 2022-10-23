@@ -21,6 +21,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+import java.awt.GridLayout;
 
 public class Program {
 
@@ -121,7 +122,11 @@ public class Program {
 		
 	    JPanel panel_2 = new JPanel();
 	    panel_2.setBackground(Color.DARK_GRAY);
-		frame.getContentPane().add(panel_2, BorderLayout.SOUTH);
+		
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
+		frame.getContentPane().add(panel_3, BorderLayout.SOUTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("Your result for day -- part - is: ");
 		lblNewLabel_1.setForeground(Color.LIGHT_GRAY);
@@ -156,12 +161,13 @@ public class Program {
 		});
 		panel_1.add(input);
 		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(Color.DARK_GRAY);
 		MyBut btnNewButton = new MyBut("Calcola!!!");
 		btnNewButton.setText("Calculate!!!");
 		btnNewButton.setForeground(Color.DARK_GRAY);
 		btnNewButton.setFont(new Font("Century Gothic", Font.BOLD, 15));
 		btnNewButton.setAlignmentX(0.5f);
-		
 		btnNewButton.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (day!=0&&part!=0) {
@@ -176,7 +182,9 @@ public class Program {
 		    	}
 			}
 		});
-		panel_1.add(btnNewButton);
+		panel_4.add(btnNewButton);
+		panel_3.add(panel_4);
+		panel_3.add(panel_2);
 		
 	}
 
