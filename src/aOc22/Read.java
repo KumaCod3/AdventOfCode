@@ -30,6 +30,17 @@ public class Read {
 		return fin;
 	}
 	
+	//splitta singoli int a capo
+	public static ArrayList<String[]> copList(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			String[] riga=a.split(" ");
+			lista.add(riga);
+		}
+		return lista;
+	}
+	
 	
 	//splitta singoli int a capo
 	public static ArrayList<Integer> intList(String s){

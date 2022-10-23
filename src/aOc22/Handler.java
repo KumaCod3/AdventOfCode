@@ -20,7 +20,18 @@ public class Handler {
 		if (yea==1) {
 			if (day==1) {
 				if (part==1) {
-					ris=Day01_part1_2021.calculate(inp);
+					ris=Day01_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day01_2021.calculate2(inp);
+				}
+			}
+			else if (day==2) {
+				if (part==1) {
+					ris=Day02_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day02_2021.calculate2(inp);
 				}
 			}
 		}
