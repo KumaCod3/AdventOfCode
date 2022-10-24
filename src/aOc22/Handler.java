@@ -1,7 +1,5 @@
 package aOc22;
 
-import java.util.ArrayList;
-
 public class Handler {
 	private int day;
 	private int part;

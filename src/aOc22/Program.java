@@ -1,5 +1,4 @@
 package aOc22;
-
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,17 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextArea;
-import javax.swing.JButton;
-import java.awt.Component;
 import javax.swing.JRadioButton;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
-import javax.swing.border.LineBorder;
 import java.awt.GridLayout;
 
 public class Program {

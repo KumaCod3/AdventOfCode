@@ -1,7 +1,5 @@
 package aOc22;
-
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Day02_2021 {
 	

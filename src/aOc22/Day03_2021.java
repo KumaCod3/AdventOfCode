@@ -38,7 +38,6 @@ public class Day03_2021 {
 	public static long calculate2(String s) {
 		List<int[]> lista= Read.intArList(s);
 		int fin=0;
-		int ris = 0;
 		int t = 2;
 		int o2 = 0;
 		int co2 = 0;
