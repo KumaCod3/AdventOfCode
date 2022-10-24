@@ -2,10 +2,11 @@ package aOc22;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Day06_2021 {
 	public static long calculate1(String s) {
-		LinkedList<Integer> lantern = Read.intVirList(s);
+		List<Integer> lantern = Read.intVirList(s);
 		int t=0;
 		
 		for (int p = 0; p < 80; p++) {
@@ -28,7 +29,7 @@ public class Day06_2021 {
 	}
 	
 	public static long calculate2(String s) {
-		LinkedList<Integer> lantern = Read.intVirList(s);
+		List<Integer> lantern = Read.intVirList(s);
 		long[] groupA = { 1, 0 };
 		long[] groupB = { 2, 0 };
 		long[] groupC = { 3, 0 };

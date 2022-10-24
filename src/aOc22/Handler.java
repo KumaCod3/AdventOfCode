@@ -66,6 +66,30 @@ public class Handler {
 					ris=Day06_2021.calculate2(inp);
 				}
 			}
+			else if (day==7) {
+				if (part==1) {
+					ris=Day07_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day07_2021.calculate2(inp);
+				}
+			}
+			else if (day==8) {
+				if (part==1) {
+					ris=Day08_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day08_2021.calculate2(inp);
+				}
+			}
+			else if (day==9) {
+				if (part==1) {
+					ris=Day09_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day09_2021.calculate2(inp);
+				}
+			}
 		}
 		
 		else {

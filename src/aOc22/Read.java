@@ -2,6 +2,7 @@ package aOc22;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Read {
@@ -80,9 +81,9 @@ public class Read {
 		return lista;
 	}
 	//splitta array di int a capo
-	public static ArrayList<int[]> intArList(String s){
+	public static List<int[]> intArList(String s){
 		ArrayList<String> lista= new ArrayList<String>();
-		ArrayList<int[]> lis= new ArrayList<int[]>();
+		List<int[]> lis= new ArrayList<int[]>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {
 			lista.add(a);
@@ -98,8 +99,8 @@ public class Read {
 		return lis;
 	}
 	//splitta singoli int Virg
-	public static LinkedList<Integer> intVirList(String s){
-		LinkedList<Integer> lista= new LinkedList<Integer>();
+	public static List<Integer> intVirList(String s){
+		List<Integer> lista= new LinkedList<Integer>();
 		String[] cut=s.split(",");
 		for (String a:cut) {
 			int n=Integer.parseInt(a);

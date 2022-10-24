@@ -1,6 +1,7 @@
 package aOc22;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Day03_2021 {
 	public static long calculate1(String s) {
@@ -35,7 +36,7 @@ public class Day03_2021 {
 	}
 	
 	public static long calculate2(String s) {
-		ArrayList<int[]> lista= Read.intArList(s);
+		List<int[]> lista= Read.intArList(s);
 		int fin=0;
 		int ris = 0;
 		int t = 2;
