@@ -34,6 +34,38 @@ public class Handler {
 					ris=Day02_2021.calculate2(inp);
 				}
 			}
+			else if (day==3) {
+				if (part==1) {
+					ris=Day03_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day03_2021.calculate2(inp);
+				}
+			}
+			else if (day==4) {
+				if (part==1) {
+					ris=Day04_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day04_2021.calculate2(inp);
+				}
+			}
+			else if (day==5) {
+				if (part==1) {
+					ris=Day05_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day05_2021.calculate2(inp);
+				}
+			}
+			else if (day==6) {
+				if (part==1) {
+					ris=Day06_2021.calculate1(inp);
+				}
+				else if (part==2) {
+					ris=Day06_2021.calculate2(inp);
+				}
+			}
 		}
 		
 		else {

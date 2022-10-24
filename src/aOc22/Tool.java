@@ -38,6 +38,22 @@ public class Tool {
 			}
 		return val;
 	}
+	public static int binToDec(String[] s){
+		int[] w=new int[s.length];
+		for (int i =0;i<s.length;i++) {
+			w[i]=Integer.parseInt(s[i]);
+		}
+		int l=w.length;
+		int[] bin = new int[l];
+		for (int i=0;i<l;i++){
+			bin[l-1-i]=(int)Math.pow(2, i);
+		}
+		int val=0;
+		for(int g=0;g<l;g++) {
+			val=val+(w[g]*bin[g]);
+			}
+		return val;
+	}
 	// DA DECIMALE A BINARIO
 	public static String decToBin(int a){
 		String fin="";

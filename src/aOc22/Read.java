@@ -1,6 +1,7 @@
 package aOc22;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Read {
@@ -30,7 +31,7 @@ public class Read {
 		return fin;
 	}
 	
-	//splitta singoli int a capo
+	//splitta coppia stringa valore
 	public static ArrayList<String[]> copList(String s){
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n");
@@ -40,12 +41,66 @@ public class Read {
 		}
 		return lista;
 	}
-	
-	
+
 	//splitta singoli int a capo
 	public static ArrayList<Integer> intList(String s){
 		ArrayList<Integer> lista= new ArrayList<Integer>();
 		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			int n=Integer.parseInt(a);
+			lista.add(n);
+		}
+		return lista;
+	}
+	
+	//splitta singole Stringhe a capo
+		public static LinkedList<int[]> intCopList(String s){
+			LinkedList<int[]> lista = new LinkedList<int[]>();
+			String[] cut=s.split("\\n");
+			for (String line:cut) {
+				int[] coor = new int[4];
+				line = line.replaceAll(",", " ");
+				line = line.replaceAll(" -> ", " ");
+				String[] y = line.split(" ");
+				for (int d = 0; d < y.length; d++) {
+					coor[d] = Integer.parseInt(y[d]);
+				}
+				lista.add(coor);
+			}
+			return lista;
+		}
+		
+	//splitta singole Stringhe a capo
+	public static ArrayList<String> striList(String s){
+		ArrayList<String> lista= new ArrayList<String>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			lista.add(a);
+		}
+		return lista;
+	}
+	//splitta array di int a capo
+	public static ArrayList<int[]> intArList(String s){
+		ArrayList<String> lista= new ArrayList<String>();
+		ArrayList<int[]> lis= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			lista.add(a);
+		}
+		for (String a:lista) {
+			String[] riga=a.split("");
+			int[] in=new int[riga.length];
+			for (int i=0;i<riga.length;i++) {
+				in[i]=Integer.parseInt(riga[i]);
+			}
+			lis.add(in);
+		}
+		return lis;
+	}
+	//splitta singoli int Virg
+	public static LinkedList<Integer> intVirList(String s){
+		LinkedList<Integer> lista= new LinkedList<Integer>();
+		String[] cut=s.split(",");
 		for (String a:cut) {
 			int n=Integer.parseInt(a);
 			lista.add(n);
