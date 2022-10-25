@@ -80,10 +80,8 @@ public class Day12_2021 {
 		return (long) finn.size();
 	}
 	
-	////////////////////////////////////////////////////////////////
 	public static long calculate2(String s) {
 		ArrayList<String[]> input=Read.copList(s);
-		
 		ArrayList<String[]> inn=new ArrayList<String[]>();
 		LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
@@ -169,7 +167,6 @@ public class Day12_2021 {
 			}
 			temp.clear();
 		}
-		System.out.println(" TOT "+finn.size());
 		
 		Tool.bell();
 		return (long) finn.size();
