@@ -60,7 +60,8 @@ public class Program {
 		panel.add(labYear);
 		
 		Choice yeaCh = new Choice();
-		yeaCh.setForeground(Color.DARK_GRAY);
+		yeaCh.setBackground(Color.GRAY);
+		yeaCh.setForeground(new Color(255, 255, 255));
 		yeaCh.add("Choose");
 		yeaCh.add("Year 2021");
 		yeaCh.add("Year 2022");
@@ -78,7 +79,8 @@ public class Program {
 		panel.add(labDay);
 		
 		Choice dayCh = new Choice();
-		dayCh.setForeground(Color.DARK_GRAY);
+		dayCh.setBackground(Color.GRAY);
+		dayCh.setForeground(new Color(255, 255, 255));
 		dayCh.add("Choose");
 		for (int i=1;i<=25;i++) {
 			dayCh.add("Day "+i);

@@ -37,6 +37,7 @@ public class Read {
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {
+			a=a.replace("-"," ");
 			String[] riga=a.split(" ");
 			lista.add(riga);
 		}
@@ -72,7 +73,7 @@ public class Read {
 		}
 		
 	//splitta singole Stringhe a capo
-	public static ArrayList<String> striList(String s){
+	public static List<String> striList(String s){
 		ArrayList<String> lista= new ArrayList<String>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {

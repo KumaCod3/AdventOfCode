@@ -1,11 +1,12 @@
 package aOc22;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Day03_2021 {
 	public static long calculate1(String s) {
-		ArrayList<String> lista = Read.striList(s);
+		List<String> lista = Read.striList(s);
 		int fin=0;
 		int tot = 0;
 		int[] arr = new int[12];
