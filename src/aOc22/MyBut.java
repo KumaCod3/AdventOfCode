@@ -19,8 +19,8 @@ import javax.swing.border.EmptyBorder;
 
 public class MyBut extends JButton{
 	// generali
-	private Color col1=Color.YELLOW;
-	private Color col2=Color.MAGENTA;
+	private Color col1;
+	private Color col2;
 	private Color scri=Color.WHITE;
 	
 	//per OVER
@@ -38,8 +38,10 @@ public class MyBut extends JButton{
 	// rimpicciolisci per rallentare macchia click
 	private float sizeSpeed=0.5f;
 	
-	public MyBut(String a) {
+	public MyBut(String a, Color c1, Color c2) {
 		super(a);
+		col1=c1;
+		col2=c2;
 		setContentAreaFilled(false);
 		setForeground(scri);
 		
