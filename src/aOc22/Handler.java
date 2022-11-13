@@ -122,10 +122,10 @@ public class Handler {
 			}
 			else if (day==14) {
 				if (part==1) {
-//					ris=Day14_2021.calculate1(inp);
+					ris=Day14_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day14_2021.calculate2(inp);
+					ris=Day14_2021.calculate2(inp);
 				}
 			}
 			else if (day==15) {
@@ -138,10 +138,10 @@ public class Handler {
 			}
 			else if (day==16) {
 				if (part==1) {
-//					ris=Day16_2021.calculate1(inp);
+					ris=Day16_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day16_2021.calculate2(inp);
+					ris=Day16_2021.calculate2(inp);
 				}
 			}
 			else if (day==17) {
@@ -170,26 +170,26 @@ public class Handler {
 			}
 			else if (day==20) {
 				if (part==1) {
-//					ris=Day20_2021.calculate1(inp);
+					ris=Day20_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day20_2021.calculate2(inp);
+					ris=Day20_2021.calculate2(inp);
 				}
 			}
 			else if (day==21) {
 				if (part==1) {
-//					ris=Day21_2021.calculate1(inp);
+					ris=Day21_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day21_2021.calculate2(inp);
+					ris=Day21_2021.calculate2(inp);
 				}
 			}
 			else if (day==22) {
 				if (part==1) {
-//					ris=Day22_2021.calculate1(inp);
+					ris=Day22_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day22_2021.calculate2(inp);
+					ris=Day22_2021.calculate2(inp);
 				}
 			}
 			else if (day==23) {
@@ -210,10 +210,10 @@ public class Handler {
 			}
 			else if (day==25) {
 				if (part==1) {
-//					ris=Day25_2021.calculate1(inp);
+					ris=Day25_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day25_2021.calculate2(inp);
+					ris=Day25_2021.calculate2(inp);
 				}
 			}
 		}
@@ -223,8 +223,6 @@ public class Handler {
 				ris=ris+inp.charAt(i);
 			}
 		}
-		
-		
 		
 		
 		return ris;

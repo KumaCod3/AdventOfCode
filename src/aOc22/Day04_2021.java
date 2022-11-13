@@ -1,52 +1,47 @@
 package aOc22;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 
-
-///// INPUT INCASINATOOOOOOO
 public class Day04_2021 {
-	public static long calculate1(String s) {
-		ArrayList<String[]> lista=Read.copList(s);
-		int ris=0;
-		
-		
-		/*
-		int r = 0;
-		boolean vero = true;
-		int tot = 0;
-		int[][] win = new int[5][5];
 
+	public static long calculate1(String s) {
 		LinkedList<int[][]> originali = new LinkedList<int[][]>();
 		LinkedList<int[][]> temp = new LinkedList<int[][]>();
-
-// MAKE int[] of chosen numbers
-		String line = sc.nextLine().trim();
+		boolean vero = true;
+		int ris = 0;
+		int tot = 0;
+		int[][] win = new int[5][5];
+		
+		String[] inp=s.split("\\n\\n");
+		System.out.println("dovrebbe essere alto: " +inp.length);
+		String line = inp[0].trim();
 		String[] numbers = line.split(",");
 		int[] pescati = new int[numbers.length];
 		for (int i = 0; i < pescati.length; i++) {
 			pescati[i] = Integer.valueOf(numbers[i]);
 		}
 
-// MAKE List <int[][]> of tables
-		while (r == 0) {
-			try {
-				for (int y = 0; y > -1; y++) {
-					int[][] num = new int[5][5];
-					for (int i = 0; i < 5; i++) {
-						for (int j = 0; j < 5; j++) {
-							int numeri = sc.nextInt();
-							num[i][j] = numeri;
-						}
+		// make List of input tablet
+		for (int i=1;i<inp.length;i++) {
+			int[][] num = new int[5][5];
+			String[] lines=inp[i].split("\\n");
+			for(int j=0;j<lines.length;j++) {
+				String[] linea=lines[j].split(" ");
+				int[] riga=new int[5];
+				int h=0;
+				for (String st:linea) {
+					try {
+						riga[h]=Integer.parseInt(st);
+						h++;
 					}
-					originali.add(y, num);
+					catch (Exception e) {
+						
+					}
 				}
-			} catch (Exception e) {
-				r = 1;
+				num[j]=riga;
 			}
+			originali.add(i-1, num);
 		}
 
-// PLAY	
 		for (int m : pescati) {
 			ris = m;
 			for (int[][] e : (pesca(originali, m))) {
@@ -74,18 +69,76 @@ public class Day04_2021 {
 			}
 		}
 		
-		*/
-		
-		return (long) ris;
+		return (long) (tot * ris);
 	}
 	public static long calculate2(String s) {
-		ArrayList<String[]> lista=Read.copList(s);
-		int ris=0;
+		LinkedList<int[][]> originali = new LinkedList<int[][]>();
+		LinkedList<int[][]> temp = new LinkedList<int[][]>();
+		int ris = 0;
+		int tot = 0;
+		int[][] win = new int[5][5];
 		
-		
-		
-		
-		return (long) ris;
+		String[] inp=s.split("\\n\\n");
+		String line = inp[0].trim();
+		String[] numbers = line.split(",");
+		int[] pescati = new int[numbers.length];
+		for (int i = 0; i < pescati.length; i++) {
+			pescati[i] = Integer.valueOf(numbers[i]);
+		}
+
+		// make List of input tablet
+		for (int i=1;i<inp.length;i++) {
+			int[][] num = new int[5][5];
+			String[] lines=inp[i].split("\\n");
+			for(int j=0;j<lines.length;j++) {
+				String[] linea=lines[j].split(" ");
+				int[] riga=new int[5];
+				int h=0;
+				for (String st:linea) {
+					try {
+						riga[h]=Integer.parseInt(st);
+						h++;
+					}
+					catch (Exception e) {
+						
+					}
+				}
+				num[j]=riga;
+			}
+			originali.add(i-1, num);
+		}
+		for (int m : pescati) {
+			ris = m;
+			pesca(originali, m);
+			for (int[][] u : originali) {
+				if (check(u) == false) {
+					temp.add(u);
+				}
+			}
+			if (originali.size() == 1) {
+				break;
+			}
+			originali.clear();
+			for (int[][] u : temp) {
+				originali.add(u);
+			}
+			temp.clear();
+		}
+		win = originali.get(0);
+
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				if (win[i][j] == (-10)) {
+					win[i][j] = 0;
+				} else if (win[i][j] == (999)) {
+					win[i][j] = 0;
+				} else {
+					tot = tot + win[i][j];
+				}
+			}
+		}
+
+		return (long) (tot * ris);
 	}
 	
 	

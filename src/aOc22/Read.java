@@ -1,6 +1,7 @@
 package aOc22;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -120,4 +121,124 @@ public class Read {
 		}
 		return lista;
 	}
+	
+// comandi 22
+	public static LinkedList<int[]> comandi(String s,int n){
+		LinkedList<int[]> lista= new LinkedList<int[]>();
+		String[] cut=s.split("\\n");
+		int max=n;
+		int min=0-n;
+		
+		for (String line:cut) {
+			line = line.replaceAll(",", " ");
+			line = line.replaceAll("\\.\\.", " ");
+			line = line.replaceAll("=", " ");
+			line = line.replaceAll(" x ", " ");
+			line = line.replaceAll(" y ", " ");
+			line = line.replaceAll(" z ", " ");
+			String[] y = line.split(" ");
+			boolean range=true;
+	
+			int[] riga = new int[y.length];
+			for (int i = 0; i < y.length; i++) {
+				if (y[i].equals("on")) {
+					riga[i] = 1;
+				} else if (y[i].equals("off")) {
+					riga[i] = 0;
+				} else {
+					riga[i] = Integer.valueOf(y[i]);
+					if (Integer.valueOf(y[i])<min||Integer.valueOf(y[i])>max) {
+						range=false;
+					}
+				}
+			}
+			if (range) {
+				lista.add(riga);
+			}
+		}
+		return lista;
+	}
+
+	public static LinkedList<int[]> coor(String s){
+		LinkedList<int[]> lista= new LinkedList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String cor:cut) {
+			int[] ins=new int[2];
+			String[] sing=cor.split(",");
+			ins[0]=Integer.parseInt(sing[0]);
+			ins[1]=Integer.parseInt(sing[1]);
+			lista.add(ins);
+		}
+		
+		return lista;
+	}
+			
+			
+	public static ArrayList<int[]> simb(String s) {
+		ArrayList<int[]> tavola=new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut){
+			String[] y=a.split("");
+			int[] x=new int[y.length];
+			for (int d=0;d<y.length;d++){
+				if (y[d].equals(".")){
+					x[d]=0;}
+				else if (y[d].equals(">")){
+					x[d]=1;}
+				else if (y[d].equals("v")){
+					x[d]=2;}
+				}
+			tavola.add(x);
+			}
+		return tavola;
+	}
+	public static ArrayList<String[]> pieg(String s){
+		ArrayList<String[]> pieghe = new ArrayList<String[]>();
+		
+		String[] ele=s.split("\\n");
+		for (String inn:ele) {
+			String[] intera = inn.split(" ");
+			String[] pieg = intera[2].split("=");
+			pieghe.add(pieg);
+		}
+		
+		return pieghe;
+	}
+	
+	public static HashMap<String, String> rule(String s){
+		HashMap<String, String> rules = new HashMap<String, String>();
+		String[] cut=s.split("\\n");
+		for (String line:cut) {
+			if (line.equals("")) {
+				continue;
+			}
+	
+			line = line.replaceAll("\\-\\>", "");
+			String[] y = line.split("  ");
+			rules.put(y[0], y[1]);
+		}
+		return rules;
+	}
+	
+	public static LinkedList<int[]> inp(String s){
+		LinkedList<int[]> input = new LinkedList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String line:cut) {
+			
+			if (line.equals("")) {
+				continue;
+			}
+		
+			String[] y = line.split("");
+			int[] lin = new int[y.length];
+			for (int d = 0; d < y.length; d++) {
+				if (y[d].equals("#")) {
+					lin[d] = 1;
+				}
+			}
+		input.add(lin);
+		}
+		return input;
+	}
+	
 }
