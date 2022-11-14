@@ -153,7 +153,7 @@ public class Program {
 		resulT.setBackground(Color.BLACK);
 		resulT.setForeground(Color.YELLOW);
 		bottom.add(resulT);
-		resulT.setColumns(15);
+		resulT.setColumns(15); 
 		resulT.setEditable(false);
 		
 		JTextArea input = new JTextArea();
