@@ -1,7 +1,5 @@
 package aOc22;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Day13_2021 {
@@ -115,9 +113,9 @@ public class Day13_2021 {
 				}
 		// create the paper
 				char[][] fin = new char[yMax + 1][xMax + 1];
-				for (int i = 0; i < xMax; i++) {
-					for (int h = 0; h < yMax; h++) {
-						fin[h][i] = ' ';
+				for (int i = 0; i <= xMax; i++) {
+					for (int h = 0; h <= yMax; h++) {
+						fin[h][i] = '-';
 					}
 				}
 		// draw the points
@@ -128,12 +126,13 @@ public class Day13_2021 {
 					}
 				}
 		// print results
-				System.out.println("Paper: ");
-				for (char[] a : fin) {
-					System.out.println(Arrays.toString(a));
-				}
-				System.out.println("Total points: " + ris);
-		
+//				System.out.println("Paper: ");
+//				for (char[] a : fin) {
+//					System.out.println(Arrays.toString(a));
+//				}
+//				System.out.println("Total points: " + ris);
+				Show fine=new Show(fin);
+				fine.setVisible(true);
 		
 		return (long) ris;
 	}
