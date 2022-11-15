@@ -1,6 +1,4 @@
 package aOc22;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Day14_2021 {
@@ -15,7 +13,7 @@ public class Day14_2021 {
 		HashMap<String, String> rules = Read.rule(inp[1]);
 		HashMap<String, Integer> conta = new HashMap<String, Integer>();
 
-		// apply rules for 10 times
+// apply rules for 10 times
 		while (t < 10) {
 
 			for (int i = 0; i < cod.length() - 1; i++) {
@@ -53,13 +51,7 @@ public class Day14_2021 {
 	}
 	
 	public static long calculate2(String s) {
-		ArrayList<String[]> lista=Read.copList(s);
-		int fin=0;
 		
-		
-		
-		
-		
-		return (long) fin;
+		return 12l;
 	}
 }

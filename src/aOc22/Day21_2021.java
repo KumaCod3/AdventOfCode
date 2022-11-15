@@ -2,6 +2,9 @@ package aOc22;
 import java.util.ArrayList;
 
 public class Day21_2021 {
+	static ArrayList<long[]> temp=new ArrayList<long[]>();
+	static long ok=0;
+	static long ko=0;
 	public static long calculate1(String s) {
 		int fin=0;
 		int p1=0;
@@ -82,12 +85,77 @@ public class Day21_2021 {
 	}
 	
 	public static long calculate2(String s) {
-//		ArrayList<String[]> lista=Read.copList(s);
-		int fin=0;
+		ok=0;
+		ko=0;
+		String[] righe=s.split("\\n");
+		long p1 = Integer.parseInt(righe[0].substring(righe[0].length()-1));
+		long p2 = Integer.parseInt(righe[1].substring(righe[0].length()-1));
+		int[] possibility={3,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8,9};
+		int t=1;
 		
+		ArrayList<long[]> roll=new ArrayList<long[]>();
+		long[] inizio={p1,0,p2,0,1};
+		roll.add(inizio);
 		
+		while(roll.size()>0) {
+			System.out.println("Giro: "+t+" dimensione: "+roll.size());
+			for (long[] rr:roll) {
+				if (t%2!=0) {
+					for (int y:possibility) {
+						long[] tem={rr[0],rr[1],rr[2],rr[3],rr[4]};
+						tem[0]=(tem[0]+y);
+						if (tem[0]>10) {
+							tem[0]=(tem[0]%10);
+						}
+						tem[1]=tem[1]+tem[0];
+						aggiungi(tem);
+					}
+				}
+				else {
+					for (int y:possibility) {
+						long[] tem={rr[0],rr[1],rr[2],rr[3],rr[4]};
+						tem[2]=(tem[2]+y);
+						if (tem[2]>10) {
+							tem[2]=(tem[2]%10);
+						}
+						tem[3]=tem[3]+tem[2];
+						aggiungi(tem);
+					}
+				}
+			}
+			t++;
+			roll.clear();
+			for (long[] tt:temp) {
+				roll.add(tt);
+			}
+			temp.clear();
+		}
+		Tool.bell();
+		if (ok>ko) {
+			return ok;
+		}
 		
-		
-		return (long) fin;
+		return ko;
+	}
+	
+	public static void aggiungi(long[] tem) {
+		boolean tr=false;
+		if (tem[1]>=21) {
+			ko=ko+tem[4];
+			return;
+		}
+		if (tem[3]>=21) {
+			ok=ok+tem[4];
+			return;
+		}
+		for (long[] x:temp) {
+			if (x[0]==tem[0]&&x[1]==tem[1]&&x[2]==tem[2]&&x[3]==tem[3]) {
+				x[4]=x[4]+tem[4];
+				tr=true;
+			}
+		}
+		if (tr==false) {
+			temp.add(tem);
+		}
 	}
 }

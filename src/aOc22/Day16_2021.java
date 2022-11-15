@@ -1,6 +1,4 @@
 package aOc22;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Day16_2021 {
@@ -9,7 +7,7 @@ public class Day16_2021 {
 		String binario = "";
 		LinkedList<Integer> valoriH = new LinkedList<Integer>();
 
-//  make string  BINARy 
+//  make string  BINARY 
 		char[] input = new char[s.length()];
 		for (int c = 0; c < s.length(); c++) {
 			input[c] = s.charAt(c);
@@ -34,7 +32,6 @@ public class Day16_2021 {
 	}
 	
 	public static long calculate2(String s) {
-//		ArrayList<String[]> lista=Read.copList(s);
 		int fin=0;
 		
 		return (long) fin;
@@ -102,13 +99,9 @@ public class Day16_2021 {
 		h = h + 6;
 		if (tipo != 4) {
 			if (binario.charAt(h) == '0') {
-				String temp = binario.substring(h + 1, h + 16);
 				h = h + 16;
-				int val = decimale(temp);
 			} else if (binario.charAt(h) == '1') {
-				String temp = binario.substring(h + 1, h + 11);
 				h = h + 12;
-				int val = decimale(temp);
 
 			}
 		} else {
