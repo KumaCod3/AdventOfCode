@@ -34,6 +34,9 @@ public class Day16_2021 {
 	public static long calculate2(String s) {
 		int fin=0;
 		
+		Nope no=new Nope();
+		no.setVisible(true);
+		
 		return (long) fin;
 	}
 	

@@ -130,10 +130,10 @@ public class Handler {
 			}
 			else if (day==15) {
 				if (part==1) {
-//					ris=Day15_2021.calculate1(inp);
+					ris=Day15_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day15_2021.calculate2(inp);
+					ris=Day15_2021.calculate2(inp);
 				}
 			}
 			else if (day==16) {

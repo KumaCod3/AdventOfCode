@@ -84,19 +84,28 @@ public class Read {
 	}
 	//splitta array di int a capo
 	public static List<int[]> intArList(String s){
-		ArrayList<String> lista= new ArrayList<String>();
 		List<int[]> lis= new ArrayList<int[]>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {
-			lista.add(a);
-		}
-		for (String a:lista) {
 			String[] riga=a.split("");
 			int[] in=new int[riga.length];
 			for (int i=0;i<riga.length;i++) {
 				in[i]=Integer.parseInt(riga[i]);
 			}
 			lis.add(in);
+		}
+		return lis;
+	}
+	public static int[][] arOfAr(String s){
+		String[] cut=s.split("\\n");
+		int[][] lis=new int[cut.length][];
+		for (int i=0;i<cut.length;i++) {
+			String[] riga=cut[i].split("");
+			int[] in=new int[riga.length];
+			for (int h=0;h<riga.length;h++) {
+				in[h]=Integer.parseInt(riga[h]);
+			}
+			lis[i]=(in);
 		}
 		return lis;
 	}
@@ -155,6 +164,34 @@ public class Read {
 			if (range) {
 				lista.add(riga);
 			}
+		}
+		return lista;
+	}
+	
+	public static LinkedList<long[]> comandi(String s){
+		LinkedList<long[]> lista= new LinkedList<long[]>();
+		String[] cut=s.split("\\n");
+		
+		for (String line:cut) {
+			line = line.replaceAll(",", " ");
+			line = line.replaceAll("\\.\\.", " ");
+			line = line.replaceAll("=", " ");
+			line = line.replaceAll(" x ", " ");
+			line = line.replaceAll(" y ", " ");
+			line = line.replaceAll(" z ", " ");
+			String[] y = line.split(" ");
+	
+			long[] riga = new long[y.length];
+			for (int i = 0; i < y.length; i++) {
+				if (y[i].equals("on")) {
+					riga[i] = 1;
+				} else if (y[i].equals("off")) {
+					riga[i] = 0;
+				} else {
+					riga[i] = Long.valueOf(y[i])+Integer.MAX_VALUE;
+				}
+			}
+			lista.add(riga);
 		}
 		return lista;
 	}

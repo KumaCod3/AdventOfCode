@@ -51,7 +51,9 @@ public class Day14_2021 {
 	}
 	
 	public static long calculate2(String s) {
+		Nope no=new Nope();
+		no.setVisible(true);
 		
-		return 12l;
+		return 0l;
 	}
 }

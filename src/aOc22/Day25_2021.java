@@ -82,11 +82,10 @@ public class Day25_2021 {
 		return (long) ris+1;
 	}
 	public static long calculate2(String s) {
-//		ArrayList<String[]> lista=Read.copList(s);
 		int fin=0;
 		
-		
-		
+		Nope no=new Nope();
+		no.setVisible(true);
 		
 		return (long) fin;
 	}

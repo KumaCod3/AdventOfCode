@@ -1,7 +1,12 @@
 package aOc22;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Day22_2021 {
+	private static HashMap<long[],Integer> on=new HashMap<long[],Integer>();
+	
 	public static long calculate1(String s) {
 		LinkedList<int[]> comandi=Read.comandi(s,50);
 		int[][][] cubo = new int[110][110][110];
@@ -31,12 +36,37 @@ public class Day22_2021 {
 	}
 	
 	public static long calculate2(String s) {
-//		ArrayList<String[]> lista=Read.copList(s);
-		int fin=0;
 		
+		Nope no=new Nope();
+		no.setVisible(true);
 		
-		
-		
-		return (long) fin;
+		return (long) on.size();
+	}
+	
+	private static void aggiungi(long[] x) {
+		boolean tr=true;
+		for (long[] cor:on.keySet()) {
+			if (Arrays.equals(cor,x)) {
+				tr=false;
+			}
+		}
+		if (tr) {
+			on.put(x,3);
+		}
+	}
+	
+	private static void togli(long[] x) {
+		try {
+			for (long[] cor:on.keySet()) {
+				System.out.println("provo a togliere "+Arrays.toString(x)+" da "+Arrays.toString(cor));
+				if (Arrays.equals(cor,x)) {
+					on.remove(cor);
+					System.out.println("tolto");
+				}
+			}
+		} catch (Exception e) {
+			// empty
+			
+		}
 	}
 }
