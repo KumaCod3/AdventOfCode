@@ -194,18 +194,18 @@ public class Handler {
 			}
 			else if (day==23) {
 				if (part==1) {
-//					ris=Day23_2021.calculate1(inp);
+					ris=Day23_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day23_2021.calculate2(inp);
+					ris=Day23_2021.calculate2(inp);
 				}
 			}
 			else if (day==24) {
 				if (part==1) {
-//					ris=Day24_2021.calculate1(inp);
+					ris=Day24_2021.calculate1(inp);
 				}
 				else if (part==2) {
-//					ris=Day24_2021.calculate2(inp);
+					ris=Day24_2021.calculate2(inp);
 				}
 			}
 			else if (day==25) {
