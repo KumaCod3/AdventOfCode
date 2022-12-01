@@ -44,6 +44,20 @@ public class Read {
 		}
 		return lista;
 	}
+	
+	public static ArrayList<int[]> simp(String s){
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n\\n");
+		for (String a:cut) {
+			String[] riga=a.split("\\n");
+			int[] line=new int[riga.length];
+			for (int i=0;i<riga.length;i++) {
+				line[i]=Integer.parseInt(riga[i]);				
+			}
+			lista.add(line);
+		}
+		return lista;
+	}
 
 	//splitta singoli int a capo
 	public static ArrayList<Integer> intList(String s){
