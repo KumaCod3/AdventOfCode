@@ -42,7 +42,6 @@ public class Day02_2022 {
 				}
 			}
 		}
-		System.out.println("OOOOK");
 		return (long) fin;
 	}
 	public static long calculate2(String s) {

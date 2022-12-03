@@ -45,6 +45,20 @@ public class Read {
 		return lista;
 	}
 	
+	public static ArrayList<char[]> copListCh(String s){
+		ArrayList<char[]> lista= new ArrayList<char[]>();
+		String[] cut=s.split("\\n");
+		for (String g:cut) {
+			char[] riga= new char[g.length()];
+			for (int i=0;i<g.length();i++) {
+				char a=g.charAt(i);
+				riga[i]=a;
+			}
+			lista.add(riga);
+		}
+		return lista;
+	}
+	
 	public static ArrayList<int[]> simp(String s){
 		ArrayList<int[]> lista= new ArrayList<int[]>();
 		String[] cut=s.split("\\n\\n");
