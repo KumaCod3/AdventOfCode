@@ -306,4 +306,19 @@ public class Read {
 		return input;
 	}
 	
+	public static LinkedList<int[]> coorDop(String s){
+		LinkedList<int[]> lista= new LinkedList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String cor:cut) {
+			cor = cor.replaceAll("\\-", ",");
+			String[] riga=cor.split(",");
+			int[] ins=new int[riga.length];
+			for (int i=0;i<riga.length;i++) {
+				ins[i]=Integer.parseInt(riga[i]);
+			}
+			lista.add(ins);
+		}
+		
+		return lista;
+	}
 }

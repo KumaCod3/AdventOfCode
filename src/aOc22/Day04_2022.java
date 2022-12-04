@@ -1,22 +1,41 @@
 package aOc22;
-
-import program.Nope;
+import java.util.LinkedList;
+import program.Read;
 
 public class Day04_2022 {
 	public static long calculate1(String s) {
 		int fin=0;
+		LinkedList<int[]> list=Read.coorDop(s);
 		
-		Nope no=new Nope("Sorry, develop time travel is way beyond my capacity!");
-		no.setVisible(true);
-		
+		for (int[] in:list) {
+			if (in[0]<=in[2]&&in[1]>=in[3]) {
+				fin=fin+1;
+			}
+			else if (in[0]>=in[2]&&in[1]<=in[3]){
+				fin=fin+1;
+			}
+		}
 		return (long) fin;
 	}
+	
 	public static long calculate2(String s) {
 		int fin=0;
+		LinkedList<int[]> list=Read.coorDop(s);
 		
-		Nope no=new Nope("Sorry, develop time travel is way beyond my capacity!");
-		no.setVisible(true);
-		
+		for (int[] in:list) {
+			if (in[0]<=in[2]&&in[1]>=in[3]) {
+				fin=fin+1;
+			}
+			else if (in[0]>=in[2]&&in[1]<=in[3]){
+				fin=fin+1;
+			}
+			else if (in[0]<=in[3]&&in[1]>=in[3]){
+				fin=fin+1;
+			}
+			else if (in[0]<=in[2]&&in[1]>=in[2]){
+				fin=fin+1;
+			}
+		}
 		return (long) fin;
 	}
 }
