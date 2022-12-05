@@ -1,7 +1,6 @@
 package aOc22;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
 import program.Read;
 
 public class Day03_2022 {
