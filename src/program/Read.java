@@ -1,9 +1,11 @@
 package program;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Read {
@@ -321,4 +323,78 @@ public class Read {
 		
 		return lista;
 	}
+	public static LinkedList<int[]> coorDopD(String s){
+		LinkedList<int[]> lista= new LinkedList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String cor:cut) {
+			cor = cor.replaceAll("\\-,,", "");
+			String[] riga=cor.split(" ");
+			int[] ins=new int[3];
+			int i=0;
+			for (String a:riga) {
+				try {
+					ins[i]=Integer.parseInt(a);
+					i++;
+				}
+				catch (Exception e){}
+			}
+			lista.add(ins);
+		}
+		
+		return lista;
+	}
+	public static ArrayList<String[]> copListD(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			String[] riga=a.split("");
+			lista.add(riga);
+		}
+		return lista;
+	}
+	public static HashMap<Integer,LinkedList<String>>  schem(String s){
+		HashMap<Integer,LinkedList<String>> car=new HashMap<Integer,LinkedList<String>>();
+		HashMap<Integer,LinkedList<String>> temp=new HashMap<Integer,LinkedList<String>>();
+		
+		String[] righe=s.split("\\n");
+		ArrayList<String[]> arr=new ArrayList<String[]>();
+		for (String r:righe) {
+			String[] line=r.split("");
+			arr.add(line);
+		}
+		arr.remove(arr.size()-1);
+		for(String[] r:arr) {
+			for (int i=0;i<r.length;i++) {
+				String b=r[i];
+				Character a=b.charAt(0);
+				if (Character.isUpperCase(a)) {
+					try {
+						temp.get(i).add(b);
+					}
+					catch (Exception e) {
+						temp.put(i, new LinkedList<String>());
+						temp.get(i).add(b);
+					}
+				}
+			}
+		}
+		int[] index=new int[temp.size()];
+		int ind=0;
+		for (int u:temp.keySet()) {
+			index[ind]=u;
+			System.out.println(ind+" to "+u);
+			ind++;
+		}
+		Arrays.sort(index);
+		for (Map.Entry<Integer,LinkedList<String>> entry:temp.entrySet()) {
+			int in=-1;
+			for (int i=0;i<index.length;i++) {
+				if (index[i]==entry.getKey())
+					in=i+1;
+			}
+			car.put(in, entry.getValue());
+		}
+		return car;
+	}
 }
+
