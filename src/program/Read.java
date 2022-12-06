@@ -396,5 +396,14 @@ public class Read {
 		}
 		return car;
 	}
+	
+	public static ArrayList<String> singl(String s){
+		ArrayList<String> lista= new ArrayList<String>();
+		String[] cut=s.split("");
+		for (String a:cut) {
+			lista.add(a);
+		}
+		return lista;
+	}
 }
 
