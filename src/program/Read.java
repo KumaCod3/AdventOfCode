@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Read {
 	ArrayList<String> input=new ArrayList<String>();
@@ -402,6 +404,17 @@ public class Read {
 		String[] cut=s.split("");
 		for (String a:cut) {
 			lista.add(a);
+		}
+		return lista;
+	}
+	public static ArrayList<String[]> copListS(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			a=a.replaceAll("\\$ ","command");
+			a=a.replaceAll("/","0");
+			String[] riga=a.split(" ");
+			lista.add(riga);
 		}
 		return lista;
 	}
