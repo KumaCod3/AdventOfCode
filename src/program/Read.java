@@ -115,8 +115,8 @@ public class Read {
 		return lista;
 	}
 	//splitta array di int a capo
-	public static List<int[]> intArList(String s){
-		List<int[]> lis= new ArrayList<int[]>();
+	public static ArrayList<int[]> intArList(String s){
+		ArrayList<int[]> lis= new ArrayList<int[]>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {
 			String[] riga=a.split("");
