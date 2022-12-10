@@ -48,6 +48,16 @@ public class Read {
 		}
 		return lista;
 	}
+	public static ArrayList<String[]> copListN(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+//			a=a.replace("-"," ");
+			String[] riga=a.split(" ");
+			lista.add(riga);
+		}
+		return lista;
+	}
 	
 	public static ArrayList<char[]> copListCh(String s){
 		ArrayList<char[]> lista= new ArrayList<char[]>();
