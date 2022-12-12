@@ -10,6 +10,9 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import aOc22.Day12_2022;
+import aOc22.Prova;
+
 public class Read {
 	ArrayList<String> input=new ArrayList<String>();
 	Scanner sc=new Scanner(System.in);
@@ -364,6 +367,33 @@ public class Read {
 		}
 		return lista;
 	}
+	
+	public static int[][] copAlt(String s){
+		String[] cut=s.split("\\n");
+		int[][] lista=new int[cut.length][];
+		int aa='a';
+		int ind=0;
+		for (String a:cut) {
+			String[] riga=a.split("");
+			int[] rin=new int[riga.length];
+			for (int i=0;i<riga.length;i++) {
+				int tem=riga[i].charAt(0);
+				rin[i]=tem-aa+1;
+				if (rin[i]==-13) {
+					rin[i]=1;
+				}
+				else if (rin[i]==-27) {
+					rin[i]='z'-'a'+1;
+					Day12_2022.corF[0]= ind;
+					Day12_2022.corF[1]= i;
+				}
+			}
+			lista[ind]=rin;
+			ind++;
+		}
+		return lista;
+	}
+	
 	public static HashMap<Integer,LinkedList<String>>  schem(String s){
 		HashMap<Integer,LinkedList<String>> car=new HashMap<Integer,LinkedList<String>>();
 		HashMap<Integer,LinkedList<String>> temp=new HashMap<Integer,LinkedList<String>>();
@@ -426,6 +456,17 @@ public class Read {
 			String[] riga=a.split(" ");
 			lista.add(riga);
 		}
+		return lista;
+	}
+	
+	public static ArrayList<String[]> monk(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n\\n");
+		for (String a:cut) {
+			String[] riga=a.split("\\n");
+			lista.add(riga);
+		}
+		
 		return lista;
 	}
 }
