@@ -90,7 +90,6 @@ public class Read {
 		return lista;
 	}
 
-	//splitta singoli int a capo
 	public static ArrayList<Integer> intList(String s){
 		ArrayList<Integer> lista= new ArrayList<Integer>();
 		String[] cut=s.split("\\n");
@@ -101,7 +100,6 @@ public class Read {
 		return lista;
 	}
 	
-	//splitta singole Stringhe a capo
 		public static LinkedList<int[]> intCopList(String s){
 			LinkedList<int[]> lista = new LinkedList<int[]>();
 			String[] cut=s.split("\\n");
@@ -118,7 +116,6 @@ public class Read {
 			return lista;
 		}
 		
-	//splitta singole Stringhe a capo
 	public static List<String> striList(String s){
 		ArrayList<String> lista= new ArrayList<String>();
 		String[] cut=s.split("\\n");
@@ -127,7 +124,7 @@ public class Read {
 		}
 		return lista;
 	}
-	//splitta array di int a capo
+
 	public static ArrayList<int[]> intArList(String s){
 		ArrayList<int[]> lis= new ArrayList<int[]>();
 		String[] cut=s.split("\\n");
@@ -141,6 +138,7 @@ public class Read {
 		}
 		return lis;
 	}
+	
 	public static int[][] arOfAr(String s){
 		String[] cut=s.split("\\n");
 		int[][] lis=new int[cut.length][];
@@ -154,7 +152,7 @@ public class Read {
 		}
 		return lis;
 	}
-	//splitta singoli int Virg
+
 	public static List<Integer> intVirList(String s){
 		List<Integer> lista= new LinkedList<Integer>();
 		String[] cut=s.split(",");
@@ -164,7 +162,7 @@ public class Read {
 		}
 		return lista;
 	}
-	//coordinate
+
 	public static ArrayList<String[]> coorList(String s){
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n");
@@ -176,7 +174,6 @@ public class Read {
 		return lista;
 	}
 	
-// comandi 22
 	public static LinkedList<int[]> comandi(String s,int n){
 		LinkedList<int[]> lista= new LinkedList<int[]>();
 		String[] cut=s.split("\\n");
@@ -463,10 +460,42 @@ public class Read {
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n\\n");
 		for (String a:cut) {
+			
 			String[] riga=a.split("\\n");
 			lista.add(riga);
 		}
 		
+		return lista;
+	}
+	
+	public static ArrayList<String> pro(String s){
+		ArrayList<String> lista= new ArrayList<String>();
+		s=s.replace("\\n\\n", "\\n");
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			
+			
+			lista.add(a);
+		}
+		
+		return lista;
+	}
+	
+	public static ArrayList<int[]> bacon(String s){
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			a=a.replace(",","");
+			a=a.replace("="," ");
+			a=a.replace(":","");
+			String[] riga=a.split(" ");
+			int[] fin=new int[4];
+			fin[0]=Integer.parseInt(riga[3]);
+			fin[1]=Integer.parseInt(riga[5]);
+			fin[2]=Integer.parseInt(riga[11]);
+			fin[3]=Integer.parseInt(riga[13]);
+			lista.add(fin);
+		}
 		return lista;
 	}
 }
