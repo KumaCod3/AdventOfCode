@@ -498,5 +498,23 @@ public class Read {
 		}
 		return lista;
 	}
+
+	public static ArrayList<int[][]> sand(String s){
+		String[] cut=s.split("\\n");
+		ArrayList<int[][]> lis=new ArrayList<int[][]>();
+//		int[][] lis=new int[cut.length][];
+		for (int i=0;i<cut.length;i++) {
+			String[] riga=cut[i].split(" -> ");
+			int[][] in=new int[riga.length][];
+			
+			for (int h=0;h<riga.length;h++) {
+				String[] coor=riga[h].split(",");
+				int[] cop= {Integer.parseInt(coor[0]),Integer.parseInt(coor[1])};
+				in[h]=cop;
+			}
+			lis.add(in);
+		}
+		return lis;
+	}
 }
 
