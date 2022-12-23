@@ -40,7 +40,6 @@ public class Read {
 		return fin;
 	}
 	
-	//splitta coppia stringa valore
 	public static ArrayList<String[]> copList(String s){
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n");
@@ -55,7 +54,6 @@ public class Read {
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n");
 		for (String a:cut) {
-//			a=a.replace("-"," ");
 			String[] riga=a.split(" ");
 			lista.add(riga);
 		}
@@ -100,7 +98,7 @@ public class Read {
 		return lista;
 	}
 	
-		public static LinkedList<int[]> intCopList(String s){
+	public static LinkedList<int[]> intCopList(String s){
 			LinkedList<int[]> lista = new LinkedList<int[]>();
 			String[] cut=s.split("\\n");
 			for (String line:cut) {
@@ -502,7 +500,6 @@ public class Read {
 	public static ArrayList<int[][]> sand(String s){
 		String[] cut=s.split("\\n");
 		ArrayList<int[][]> lis=new ArrayList<int[][]>();
-//		int[][] lis=new int[cut.length][];
 		for (int i=0;i<cut.length;i++) {
 			String[] riga=cut[i].split(" -> ");
 			int[][] in=new int[riga.length][];
@@ -515,6 +512,61 @@ public class Read {
 			lis.add(in);
 		}
 		return lis;
+	}
+	
+	public static ArrayList<String[]> elep(String s){
+		String[] cut=s.split("\\n");
+		ArrayList<String[]> lis=new ArrayList<String[]>();
+		for (String c:cut) {
+			c=c.replace(";","");
+			c=c.replace(",","");
+			c=c.replace("="," ");
+			c=c.replace(":","");
+			String[] riga=c.split(" ");
+			lis.add(riga);
+		}
+		return lis;
+	}
+	
+	
+	public static ArrayList<Integer> tetris(String s){
+		ArrayList<Integer> lista= new ArrayList<Integer>();
+		String[] cut=s.split("");
+		for (String a:cut) {
+			if (a.equals("<")) {
+				lista.add(-1);
+			}
+			else if (a.equals(">")) {
+				lista.add(+1);
+			}
+		}
+		return lista;
+	}
+	public static ArrayList<String[]> tiles(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n\\n");
+		String[] tab=cut[0].split("\\n");
+		lista.add(tab);
+		String[] com=new String[1];
+		com[0]=cut[1];
+		lista.add(com);
+		return lista;
+	}
+	public static int[][] field(String s){
+		String[] cut=s.split("\\n");
+		int[][] lista=new int[cut.length][];
+		for (int h=0;h<cut.length;h++) {
+			cut[h]=cut[h].replace(".","0");
+			cut[h]=cut[h].replace("#","9");
+			String[] riga=cut[h].split("");
+			int[] ri=new int[riga.length];
+			for (int i=0;i<riga.length;i++){
+				int p=Integer.parseInt(riga[i]);
+				ri[i]=p;
+			}
+			lista[h]=ri;
+		}
+		return lista;
 	}
 }
 
