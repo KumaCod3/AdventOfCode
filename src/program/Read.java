@@ -568,5 +568,26 @@ public class Read {
 		}
 		return lista;
 	}
+
+	public static ArrayList<int[]> snow(String s){
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String riga:cut) {
+			riga=riga.replace(".","0");
+			riga=riga.replace("#","9");
+			riga=riga.replace(">","1");
+			riga=riga.replace("v","2");
+			riga=riga.replace("<","3");
+			riga=riga.replace("^","4");
+			String[] ri=riga.split("");
+			int[] ga=new int[ri.length];
+			for (int i=0;i<ri.length;i++){
+				int p=Integer.parseInt(ri[i]);
+				ga[i]=p;
+			}
+			lista.add(ga);
+		}
+		return lista;
+	}
 }
 
