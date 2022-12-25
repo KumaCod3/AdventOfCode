@@ -589,5 +589,23 @@ public class Read {
 		}
 		return lista;
 	}
+
+
+	public static ArrayList<int[]> snafu(String s){
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String r:cut) {
+			String[] ri=r.split("");
+			int[] ga=new int[ri.length];
+			for (int i=0;i<ri.length;i++) {
+				ri[i]=ri[i].replace("-","-1");
+				ri[i]=ri[i].replace("=","-2");
+				int p=Integer.parseInt(ri[i]);
+				ga[ri.length-1-i]=p;
+			}
+			lista.add(ga);
+		}
+		return lista;
+	}
 }
 
