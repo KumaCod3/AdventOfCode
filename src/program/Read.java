@@ -376,6 +376,8 @@ public class Read {
 				rin[i]=tem-aa+1;
 				if (rin[i]==-13) {
 					rin[i]=1;
+					Day12_2022.corI[0]= ind;
+					Day12_2022.corI[1]= i;
 				}
 				else if (rin[i]==-27) {
 					rin[i]='z'-'a'+1;
@@ -542,6 +544,7 @@ public class Read {
 		}
 		return lista;
 	}
+	
 	public static ArrayList<String[]> tiles(String s){
 		ArrayList<String[]> lista= new ArrayList<String[]>();
 		String[] cut=s.split("\\n\\n");
@@ -602,6 +605,21 @@ public class Read {
 				ri[i]=ri[i].replace("=","-2");
 				int p=Integer.parseInt(ri[i]);
 				ga[ri.length-1-i]=p;
+			}
+			lista.add(ga);
+		}
+		return lista;
+	}
+
+	public static ArrayList<int[]> goed(String s) {
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String r:cut) {
+			String[] ri=r.split(" ");
+			String[] line= {ri[6],ri[12],ri[18],ri[21],ri[27],ri[30]};
+			int[] ga=new int[6];
+			for (int i=0;i<6;i++) {
+				ga[i]=Integer.parseInt(line[i]);
 			}
 			lista.add(ga);
 		}
