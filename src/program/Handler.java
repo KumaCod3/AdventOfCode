@@ -49,6 +49,7 @@ import aOc22.Day22_2022;
 import aOc22.Day23_2022;
 import aOc22.Day24_2022;
 import aOc22.Day25_2022;
+import aOc22.Prova;
 
 public class Handler {
 	private int day;
@@ -466,7 +467,7 @@ public class Handler {
 					ris=Day25_2022.calculate1(inp);
 				}
 				else if (part==2) {
-					ris=Day25_2022.calculate2(inp);
+//					ris=Day25_2022.calculate2(inp);
 				}
 			}
 		}
