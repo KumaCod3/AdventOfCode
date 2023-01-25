@@ -182,7 +182,6 @@ public class Program {
 		calcola.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	if (day!=0&&part!=0) {
-			    	// do stuff
 			    	Handler hhh=new Handler(yea, day , part, ret);
 			    	ris=hhh.calc();
 			    	resulT.setText(""+ris);
@@ -209,7 +208,5 @@ public class Program {
 		});
 		buttons.add(esci);
 		panel_3.add(bottom);
-		
 	}
-
 }
