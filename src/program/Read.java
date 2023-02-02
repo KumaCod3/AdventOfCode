@@ -7,11 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import aOc22.Day12_2022;
-import aOc22.Prova;
 
 public class Read {
 	ArrayList<String> input=new ArrayList<String>();
