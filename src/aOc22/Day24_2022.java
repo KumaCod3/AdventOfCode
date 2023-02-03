@@ -1,11 +1,7 @@
 package aOc22;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
-import program.Nope;
 import program.Read;
 
 public class Day24_2022 {
@@ -16,11 +12,14 @@ public class Day24_2022 {
 	static HashMap<Integer,ArrayList<int[]>> storms;
 	static int larg=0;
 	static int alt=0;
+	static int[] fini= new int[2];
 	
 	public static long calculate1(String s) {
 		list=Read.snow(s);
 		alt=list.size();
 		larg=list.get(0).length;
+		fini[0]=alt-1;
+		fini[1]=larg-2;
 		posiz.add(ini);
 		storms=new HashMap<Integer,ArrayList<int[]>>();
 		ArrayList<int[]>es=new ArrayList<int[]>();
@@ -79,7 +78,7 @@ public class Day24_2022 {
 	
 	static boolean check() {
 		for (int[] cor:posiz) {
-			if (cor[0]==alt-1&&cor[1]==larg-2) {
+			if (cor[0]==fini[0]&&cor[1]==fini[1]) {
 				return true;
 			}
 		}
@@ -122,25 +121,34 @@ public class Day24_2022 {
 			int[] temp= {posIn[0],posIn[1]};
 			temp[0]=posIn[0]+1;
 			temp[1]=posIn[1];
-			if (list.get(temp[0])[temp[1]]==0) {
-				int[] nuo= {temp[0],temp[1]};
-				temPos.add(nuo);
+			try {
+				if (list.get(temp[0])[temp[1]]==0) {
+					int[] nuo= {temp[0],temp[1]};
+					temPos.add(nuo);
+				}
 			}
-	
+			catch (Exception e) { // no -1
+			}
 			temp[0]=posIn[0];
 			temp[1]=posIn[1]+1;
-			if (list.get(temp[0])[temp[1]]==0) {
-				int[] nuo= {temp[0],temp[1]};
-				temPos.add(nuo);
+			try {
+				if (list.get(temp[0])[temp[1]]==0) {
+					int[] nuo= {temp[0],temp[1]};
+					temPos.add(nuo);
+				}
 			}
-	
+			catch (Exception e) { // no -1
+			}
 			temp[0]=posIn[0];
 			temp[1]=posIn[1]-1;
-			if (list.get(temp[0])[temp[1]]==0) {
-				int[] nuo= {temp[0],temp[1]};
-				temPos.add(nuo);
+			try {
+				if (list.get(temp[0])[temp[1]]==0) {
+					int[] nuo= {temp[0],temp[1]};
+					temPos.add(nuo);
+				}
 			}
-	
+			catch (Exception e) { // no -1
+			}
 			temp[0]=posIn[0]-1;
 			temp[1]=posIn[1];
 			try {
@@ -183,6 +191,8 @@ public class Day24_2022 {
 		alt=list.size();
 		larg=list.get(0).length;
 		posiz.add(ini);
+		fini[0]=alt-1;
+		fini[1]=larg-2;
 		storms=new HashMap<Integer,ArrayList<int[]>>();
 		ArrayList<int[]>es=new ArrayList<int[]>();
 		ArrayList<int[]>su=new ArrayList<int[]>();
@@ -214,7 +224,7 @@ public class Day24_2022 {
 			}
 		}
 		posiz.clear();
-		posiz.add(ini);
+		posiz.add(fini);
 		while (true) {
 			giro++;
 			moveS();
@@ -244,7 +254,7 @@ public class Day24_2022 {
 	
 	static boolean checkBis() {
 		for (int[] cor:posiz) {
-			if (cor[0]==0&&cor[1]==1) {
+			if (cor[0]==ini[0]&&cor[1]==ini[1]) {
 				ini[0]=cor[0];
 				ini[1]=cor[1];
 				return true;
