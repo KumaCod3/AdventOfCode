@@ -3,17 +3,43 @@ package aOc22;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.swing.SwingWorker;
+
 import program.Nope;
+import program.Program;
 import program.Read;
+import program.Show;
 
 public class Day12_2022 {
 	
 	public static int[] corI=new int[2];
 	public static int[] corF=new int[2];
 	static ArrayList<int[]> percorsi=new ArrayList<int[]>();
-	//// PARTE 2 OK PARTE 1 DA SISTEMARE E PUSH
 	
 	public static long calculate1(String s) {
+		Show ss=new Show("Please waith, this should take an average of 15 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc1(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Program.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+	}
+	
+	public static long calc1(String s) {
+		percorsi.clear();
 		int fin=0;
 		int[][] list = Read.copAlt(s);
 		ArrayList<int[]> temp=new ArrayList<int[]>();
@@ -94,6 +120,29 @@ public class Day12_2022 {
 	}
 	
 	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 15 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc2(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Program.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+	}
+	
+	public static long calc2(String s) {
+		percorsi.clear();
 		int fin=0;
 		int[][] list = Read.copAlt(s);
 		
