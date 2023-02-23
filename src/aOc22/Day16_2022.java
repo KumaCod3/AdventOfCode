@@ -1,7 +1,12 @@
 package aOc22;
 
 import java.util.ArrayList;
+
+import javax.swing.SwingWorker;
+
+import program.Program;
 import program.Read;
+import program.Show;
 
 public class Day16_2022 {
 	// piu percorsi, piu strade, piu valve
@@ -88,6 +93,29 @@ public class Day16_2022 {
 	}
 
 	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 10 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Program.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+		
+	}
+	
+	public static long calc(String s) {
 		strade.clear();
 		int fin=0;
 		ArrayList<String[]> list=Read.elep(s);

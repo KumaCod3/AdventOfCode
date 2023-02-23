@@ -2,17 +2,16 @@ package program;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Arrays;
-import javax.swing.BoxLayout;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-public class Show extends Frame {
-	JPanel c;
+public class Show extends JFrame {
+	JPanel c= new JPanel();
 
 	public Show(String fin) {
 		super();
@@ -22,8 +21,6 @@ public class Show extends Frame {
             }    
         });
 		setLocation(110, 110);
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		c = new JPanel();
 		c.setLayout(new BorderLayout(100, 10));
 		c.setOpaque(false);
 		JTextArea resulT = new JTextArea();
@@ -39,6 +36,7 @@ public class Show extends Frame {
 		c.add(resulT);
 		add(c);
 		pack();
+		this.setVisible(true);
 	}
 	
 	public Show(char[][] fin) {
@@ -48,8 +46,6 @@ public class Show extends Frame {
                 dispose();    
             }    
         });
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		c = new JPanel();
 		c.setLayout(new BorderLayout(100, 10));
 		c.setOpaque(false);
 		

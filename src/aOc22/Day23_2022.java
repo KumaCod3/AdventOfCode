@@ -1,7 +1,8 @@
 package aOc22;
-
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.SwingWorker;
+import program.Program;
 import program.Read;
 import program.Show;
 
@@ -12,6 +13,7 @@ public class Day23_2022 {
 	static int yMas=0;
 	static int xMin=0;
 	static int yMin=0;
+	static long ddd=0;
 	
 	public static long calculate1(String s) {
 		int fin=0;
@@ -236,8 +238,32 @@ public class Day23_2022 {
 		}
 		return cont;
 	}
-
+	
+	
 	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 20 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Program.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+		
+	}
+	
+	static public long calc(String s) {
 		int giri=0;
 		int[][] tab=Read.field(s);
 		int la=tab[0].length;
