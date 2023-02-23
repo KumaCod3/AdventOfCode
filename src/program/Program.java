@@ -28,7 +28,7 @@ public class Program {
 	static long ris;
 	static int yea=0;
 	static String ret;
-	private JTextField resulT;
+	static public JTextField resulT;
 	private Dimension pulsante=new Dimension(160,50);
 	
 	public static void main(String[] args) {

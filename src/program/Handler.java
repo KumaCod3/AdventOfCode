@@ -452,6 +452,7 @@ public class Handler {
 					ris=Day23_2022.calculate1(inp);
 				}
 				else if (part==2) {
+					
 					ris=Day23_2022.calculate2(inp);
 				}
 			}
