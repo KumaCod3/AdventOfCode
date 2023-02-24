@@ -16,7 +16,6 @@ import javax.swing.JRadioButton;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Dimension;
-
 import javax.swing.JTextField;
 import java.awt.GridLayout;
 
@@ -53,7 +52,6 @@ public class Program {
 		frame.setBackground(new Color(240, 240, 240));
 		frame.setBounds(100, 100, 665, 606);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setUndecorated(true);
 		
 		JPanel top = new JPanel();
 		top.setBackground(Color.DARK_GRAY);
@@ -140,7 +138,7 @@ public class Program {
 		
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setLayout(new GridLayout(2, 1, 0, 0));
+		panel_3.setLayout(new GridLayout(3, 1, 0, 0));
 		frame.getContentPane().add(panel_3, BorderLayout.SOUTH);
 		
 		JLabel risultatoE = new JLabel("Your result for day -- part - is: ");
@@ -208,5 +206,8 @@ public class Program {
 		});
 		buttons.add(esci);
 		panel_3.add(bottom);
+		
+		Testa tt=new Testa();
+		panel_3.add(tt);
 	}
 }
