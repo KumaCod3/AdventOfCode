@@ -485,11 +485,12 @@ public class Read {
 			a=a.replace("="," ");
 			a=a.replace(":","");
 			String[] riga=a.split(" ");
-			int[] fin=new int[4];
+			int[] fin=new int[5];
 			fin[0]=Integer.parseInt(riga[3]);
 			fin[1]=Integer.parseInt(riga[5]);
 			fin[2]=Integer.parseInt(riga[11]);
 			fin[3]=Integer.parseInt(riga[13]);
+			fin[4]=Math.abs(fin[2]-fin[0])+Math.abs(fin[3]-fin[1]);
 			lista.add(fin);
 		}
 		return lista;

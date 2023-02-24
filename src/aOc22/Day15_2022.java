@@ -1,10 +1,18 @@
 package aOc22;
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
+
+import javax.swing.SwingWorker;
+
+import program.Program;
 import program.Read;
+import program.Show;
 
 public class Day15_2022 {
+	static ArrayList<int[]> bordi=new ArrayList<int[]>();
+	static ArrayList<int[]> lista;
+	static int max=4000000;
 	
 	public static long calculate1(String s) {
 		int fin=0;
@@ -23,7 +31,6 @@ public class Day15_2022 {
 			}
 		}
 		for (int[] coor:riga) {
-			System.out.println(Arrays.toString(coor));
 			if (coor[0]<coor[1]) {
 				for (int i=coor[0];i<=coor[1];i++) {
 					finn.put(i, i);
@@ -41,20 +48,38 @@ public class Day15_2022 {
 			}
 		}
 		fin=finn.size();
-		System.out.println(" boo ");
 		return (long) fin;
 	}
 	
 	public static long calculate2(String s) {
-		long fin=0;
-		ArrayList<int[]> lista=Read.bacon(s);
-		int max=4000000;
-		int finX=-1;
-		int finY=-1;
-		boolean tr=false;
-		ArrayList<int[]> bordi=new ArrayList<int[]>();
+		Show ss=new Show("Please waith, this should take an average of 5 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Program.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+	}
+	
+	public static long calc(String s) {
+		bordi.clear();
+		lista=Read.bacon(s);
+		ArrayList<int[]> temp=new ArrayList<int[]>();
 		
 		for (int[] dina:lista) {
+			temp.clear();
 			int[] cor= {dina[0],dina[1],dina[2],dina[3]};
 			if (cor[0]>cor[2]) {
 				cor[2]=cor[2]-1;
@@ -70,53 +95,57 @@ public class Day15_2022 {
 			}
 			
 			int dist=Math.abs(cor[2]-cor[0])+Math.abs(cor[3]-cor[1]);
-			for (int i=0;i<dist;i++) {
-				finY=cor[1]+i;
+			for (int i=0;i<=dist;i++) {
+				int finY=cor[1]+i;
 				int finY2=cor[1]-i;
-				int alfa=Math.abs(finY-cor[1]);
-				int delta=dist-alfa;
+				int delta=dist-i;
 				if (delta>=0) {
 					int[] ok1= {cor[0]-delta, finY};
 					int[] ok2= {cor[0]+delta, finY};
 					int[] ok3= {cor[0]-delta, finY2};
 					int[] ok4= {cor[0]+delta, finY2};
-					bordi.add(ok1);
-					bordi.add(ok2);
-					bordi.add(ok3);
-					bordi.add(ok4);
+					temp.add(ok1);
+					temp.add(ok2);
+					temp.add(ok3);
+					temp.add(ok4);
 				}
 			}
+			compare(temp);
 		}
 
-		for (int[] coor:bordi) {
-			tr=true;
-			finX=coor[0];
-			finY=coor[1];
-			if (!(finX>=0&&finX<=max&&finY>=0&&finY<=max)) {
+		BigInteger xx=new BigInteger(bordi.get(0)[0]+"");
+		xx=xx.multiply(new BigInteger("4000000"));
+		xx=xx.add(new BigInteger(""+bordi.get(0)[1]));
+		Show ss=new Show(" "+xx);
+		ss.setVisible(true);
+		return 0;
+	}
+	
+	static void agg(int[] ok) {
+		boolean tr=true;
+		for (int[] b:bordi) {
+			if (b[0]==ok[0]&&b[1]==ok[1]) {
 				tr=false;
-				continue;
-			}
-			for (int[] cor:lista) {
-				int dist=Math.abs(cor[2]-cor[0])+Math.abs(cor[3]-cor[1]);
-				int alfa=Math.abs(finY-cor[1]);
-				int delta=dist-alfa;
-				if (delta>=0) {
-					int[] ok= {cor[0]-delta, cor[0]+delta};
-					if (finX>=ok[0]&&finX<=ok[1]) {
-						tr=false;
-						break;
-					}
-				}
-			}
-			if (tr==true) {
-				break;
 			}
 		}
-			
-		long x=(long) finX;	
-		System.out.println("yups: "+finY);
-		fin=(x*4000000)+finY;
-		System.out.println(" boo ");
-		return fin;
+		if (tr) {
+			bordi.add(ok);
+		}
+	}
+	
+	static void compare(ArrayList<int[]> b) {
+		for (int[] cor:b) {
+			boolean tr=true;
+			for (int[] orig:lista) {
+				int dist=Math.abs(cor[0]-orig[0])+Math.abs(cor[1]-orig[1]);
+				if (dist<=orig[4]||cor[0]>max||cor[1]>max||cor[0]<0||cor[1]<0) {
+					tr=false;
+					break;
+				}
+			}
+			if (tr) {
+				agg(cor);
+			}
+		}
 	}
 }
