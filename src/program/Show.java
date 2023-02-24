@@ -1,6 +1,7 @@
 package program;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -15,6 +16,7 @@ public class Show extends JFrame {
 
 	public Show(String fin) {
 		super();
+		setPreferredSize(new Dimension(300, 200));
 		addWindowListener (new WindowAdapter() {    
             public void windowClosing (WindowEvent e) {    
                 dispose();    

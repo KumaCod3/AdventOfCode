@@ -1,9 +1,6 @@
 package aOc22;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
-
-import program.Nope;
 import program.Read;
 
 public class Day18_2022 {

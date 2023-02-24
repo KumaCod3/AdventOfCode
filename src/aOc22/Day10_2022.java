@@ -1,8 +1,5 @@
 package aOc22;
-
 import java.util.ArrayList;
-
-import program.Nope;
 import program.Read;
 import program.Show;
 

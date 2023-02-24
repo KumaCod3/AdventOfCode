@@ -260,7 +260,6 @@ public class Day23_2022 {
 			};
 		worker.execute();
 		return 0;
-		
 	}
 	
 	static public long calc(String s) {

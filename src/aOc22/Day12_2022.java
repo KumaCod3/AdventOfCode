@@ -1,11 +1,6 @@
 package aOc22;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.swing.SwingWorker;
-
-import program.Nope;
 import program.Program;
 import program.Read;
 import program.Show;
