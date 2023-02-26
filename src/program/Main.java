@@ -19,7 +19,7 @@ import java.awt.Dimension;
 import javax.swing.JTextField;
 import java.awt.GridLayout;
 
-public class Program {
+public class Main {
 
 	private JFrame frame;
 	static int day;
@@ -34,7 +34,7 @@ public class Program {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Program window = new Program();
+					Main window = new Main();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class Program {
 		});
 	}
 
-	public Program() {
+	public Main() {
 		initialize();
 	}
 

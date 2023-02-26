@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import javax.swing.SwingWorker;
 
-import program.Program;
+import program.Main;
 import program.Read;
 import program.Show;
 
@@ -63,7 +63,7 @@ public class Day15_2022 {
 			    @Override
 			    public void done() {
 			    	 try {
-			        	 Program.resulT.setText(""+get());
+			        	 Main.resulT.setText(""+get());
 			        	 ss.dispose();
 			        	 
 			         } catch (Exception ignore) {}
