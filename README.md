@@ -23,7 +23,7 @@ So, I have all the solutions for 2022 and some for 2021 (I won't go back to comp
 
 =Extract the downloaded project files to a folder on your computer.
 
-=Open a command prompt or terminal window and navigate to the project folder using the 'cd' command. The main class of this project is src/program.Main
+=Open a command prompt or terminal window and navigate to the project folder using the 'cd' command.
 
 =Compile the Java source code files in the project folder and its subfolders. To do this, use the command: javac -d bin -sourcepath src src/program/Main.java
 
