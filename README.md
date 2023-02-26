@@ -23,9 +23,7 @@ Or if you prefer the long way:
 
 =Extract the downloaded project files to a folder on your computer.
 
-=Open a command prompt or terminal window and navigate to the project folder using the 'cd' command.
-
-=The main class of this project is src/program.Main
+=Open a command prompt or terminal window and navigate to the project folder using the 'cd' command. The main class of this project is src/program.Main
 
 =Compile the Java source code files in the project folder and its subfolders. To do this, use the command: javac -d bin -sourcepath src src/program/Main.java
 
