@@ -16,7 +16,7 @@ Or if you prefer the long way:
 -Install the Java Development Kit (JDK) if you haven't already done so. You can download the latest version of JDK from the Oracle website.
 -Extract the downloaded project files to a folder on your computer.
 -Open a command prompt or terminal window and navigate to the project folder using the 'cd' command.
-- The main class of this project is src/program.Main
+-The main class of this project is src/program.Main
 -Compile the Java source code files in the project folder and its subfolders. To do this, use the command: javac -d bin -sourcepath src src/program/Main.java
 -Run the application by executing the command: java -cp bin program.Main
 ENJOY!
