@@ -23,7 +23,6 @@ public class Day14_2022 {
 						}
 						else {
 							for  (int yy=cop[1];yy<=y;yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
@@ -33,13 +32,11 @@ public class Day14_2022 {
 					for (int xx=cop[0];xx<=x;xx++) {
 						if (y<=cop[1]) {
 							for  (int yy=y;yy<=cop[1];yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
 						else {
 							for  (int yy=cop[1];yy<=y;yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
@@ -113,7 +110,6 @@ public class Day14_2022 {
 						}
 						else {
 							for  (int yy=cop[1];yy<=y;yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
@@ -123,13 +119,11 @@ public class Day14_2022 {
 					for (int xx=cop[0];xx<=x;xx++) {
 						if (y<=cop[1]) {
 							for  (int yy=y;yy<=cop[1];yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
 						else {
 							for  (int yy=cop[1];yy<=y;yy++) {
-								System.out.println(yy+" , "+xx);
 								tab[yy][xx]=1;
 							}
 						}
@@ -168,9 +162,6 @@ public class Day14_2022 {
 			}
 			
 		}
-//		for (int[] gg:tab) {
-//			System.out.println(Arrays.toString(gg));
-//		}
 		return (long) fin-1;
 	}
 }

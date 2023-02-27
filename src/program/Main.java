@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.lang.reflect.Method;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JTextArea;
@@ -28,6 +29,7 @@ public class Main {
 	static int yea=0;
 	static String ret;
 	static public JTextField resulT;
+	static Method meth;
 	private Dimension pulsante=new Dimension(160,50);
 	
 	public static void main(String[] args) {
@@ -179,9 +181,25 @@ public class Main {
 		calcola.setAlignmentX(0.5f);
 		calcola.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		    	if (day!=0&&part!=0) {
-			    	Handler hhh=new Handler(yea, day , part, ret);
-			    	ris=hhh.calc();
+		    	if (day!=0&&part!=0&&yea!=0) {
+		    		String cl="aOc2"+yea+".Day"+day+"_202"+yea;
+		    		Class<?> ccc=null;
+		    		try {
+		    			ccc=Class.forName(cl);
+		    		}
+		    		catch (Exception eeeee) {System.out.println("no0"+eeeee);}
+		    		try {
+		    				String nn="calculate"+part;
+		    				meth=ccc.getMethod(nn, new Class[] {String.class});
+		    		}
+		    		catch (Exception ex) {System.out.println("no1"+ex);}
+		    		if (meth!=null) {
+		    			try {
+		    				ris=(long) meth.invoke(null, ret);
+		    			}
+		    			catch (Exception ee) {System.out.println("no2"+ee);}
+		    		}
+		    		
 			    	resulT.setText(""+ris);
 			    	risultatoE.setText("(year 202"+yea+") Your result for day "+day+" part "+part+" is: ");
 		    	}
