@@ -2,7 +2,7 @@ package aOc22;
 import java.util.LinkedList;
 import program.Read;
 
-public class Day04_2022 {
+public class Day4_2022 {
 	public static long calculate1(String s) {
 		int fin=0;
 		LinkedList<int[]> list=Read.coorDop(s);

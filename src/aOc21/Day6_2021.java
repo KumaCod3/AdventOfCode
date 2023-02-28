@@ -5,7 +5,7 @@ import java.util.List;
 import program.Read;
 import program.Tool;
 
-public class Day06_2021 {
+public class Day6_2021 {
 	public static long calculate1(String s) {
 		List<Integer> lantern = Read.intVirList(s);
 		int t=0;

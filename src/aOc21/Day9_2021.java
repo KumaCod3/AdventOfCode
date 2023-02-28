@@ -7,7 +7,7 @@ import java.util.List;
 import program.Read;
 import program.Tool;
 
-public class Day09_2021 {
+public class Day9_2021 {
 	private static HashSet<int[]> puntiB = new HashSet<int[]>();
 	
 	public static long calculate1(String s) {

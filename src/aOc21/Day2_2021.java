@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import program.Read;
 
-public class Day02_2021 {
+public class Day2_2021 {
 	
 	public static long calculate1(String s) {
 		ArrayList<String[]> lista=Read.copList(s);

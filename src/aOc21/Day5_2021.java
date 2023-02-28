@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 import program.Read;
 
-public class Day05_2021 {
+public class Day5_2021 {
 	public static long calculate1(String s) {
 		LinkedList<int[]> input=Read.intCopList(s);
 		int punti=0;

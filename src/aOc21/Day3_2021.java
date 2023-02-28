@@ -6,7 +6,7 @@ import java.util.List;
 import program.Read;
 import program.Tool;
 
-public class Day03_2021 {
+public class Day3_2021 {
 	public static long calculate1(String s) {
 		List<String> lista = Read.striList(s);
 		int fin=0;

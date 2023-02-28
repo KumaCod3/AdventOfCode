@@ -2,15 +2,15 @@ package aOc22;
 import java.util.ArrayList;
 import program.Read;
 
-public class Day07_2022 {
+public class Day7_2022 {
 	public static long calculate1(String s) {
 		long fin=0;
 		ArrayList<String[]> list=Read.copListS(s);
 		final long max=100000;
 		
-		Day07_2022tree nn=new Day07_2022tree("0");
+		Day7_2022tree nn=new Day7_2022tree("0");
 		nn.parent=nn;
-		Day07_2022tree.list.add(nn);
+		Day7_2022tree.list.add(nn);
 		for (String[] com:list) {
 			if (com[0].equals("commandcd")) {
 				if (com[1].equals("..")) {
@@ -40,7 +40,7 @@ public class Day07_2022 {
 		}
 		ArrayList<Long> ccc=new ArrayList<Long>();
 		
-		for (Day07_2022tree tr:Day07_2022tree.list) {
+		for (Day7_2022tree tr:Day7_2022tree.list) {
 			if (!tr.name.equals("0")) {
 				long dd=tr.conta();
 				ccc.add(dd);
@@ -61,9 +61,9 @@ public class Day07_2022 {
 		final long set=70000000;
 		
 		int cun=0;
-		Day07_2022tree nn=new Day07_2022tree("0");
+		Day7_2022tree nn=new Day7_2022tree("0");
 		nn.parent=nn;
-		Day07_2022tree.list.add(nn);
+		Day7_2022tree.list.add(nn);
 		for (String[] com:list) {
 			if (com[0].equals("commandcd")) {
 				if (com[1].equals("..")) {
@@ -100,17 +100,17 @@ public class Day07_2022 {
 				catch (Exception eee) {					System.out.println(" non parso");}
 			}
 		}
-		System.out.println("FINEEE "+Day07_2022tree.list.size()+" = "+cun);
+		System.out.println("FINEEE "+Day7_2022tree.list.size()+" = "+cun);
 		ArrayList<Long> ccc=new ArrayList<Long>();
 		
-		for (Day07_2022tree tr:Day07_2022tree.list) {
+		for (Day7_2022tree tr:Day7_2022tree.list) {
 			if (!tr.name.equals("0")) {
 				long dd=tr.conta();
 				ccc.add(dd);
 			}
 		}
 		long root=0l;
-		for (Day07_2022tree tr:Day07_2022tree.list) {
+		for (Day7_2022tree tr:Day7_2022tree.list) {
 			if (tr.name.equals("0")) {
 				root=tr.conta();
 			}

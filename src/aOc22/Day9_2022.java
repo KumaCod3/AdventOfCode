@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import program.Read;
 
-public class Day09_2022 {
+public class Day9_2022 {
 	static String t = "C";
 	static int[][] plane = new int[10000][10000];
 	static int[] pos = { 1000, 1000 };

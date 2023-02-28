@@ -1,7 +1,7 @@
 package aOc21;
 import java.util.LinkedList;
 
-public class Day04_2021 {
+public class Day4_2021 {
 
 	public static long calculate1(String s) {
 		LinkedList<int[][]> originali = new LinkedList<int[][]>();

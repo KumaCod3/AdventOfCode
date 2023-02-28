@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import program.Read;
 
-public class Day01_2021 {
+public class Day1_2021 {
 	
 	public static long calculate1(String s) {
 		ArrayList<Integer> lista = Read.intList(s);

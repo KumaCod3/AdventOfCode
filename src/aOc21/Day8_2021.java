@@ -2,7 +2,7 @@ package aOc21;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class Day08_2021 {
+public class Day8_2021 {
 	public static long calculate1(String s) {
 		int ris = 0;
 		LinkedList<String> inDieci = new LinkedList<String>();

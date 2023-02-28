@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import program.Read;
 import program.Show;
 
-public class Day05_2022 {
+public class Day5_2022 {
 	public static long calculate1(String s) {
 		int fin=0;
 		

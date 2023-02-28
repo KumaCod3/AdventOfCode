@@ -2,7 +2,7 @@ package aOc22;
 import java.util.ArrayList;
 import program.Read;
 
-public class Day08_2022 {
+public class Day8_2022 {
 	static ArrayList<int[]> list;
 	
 	public static long calculate1(String s) {

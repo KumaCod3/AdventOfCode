@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import program.Read;
 
-public class Day03_2022 {
+public class Day3_2022 {
 	private static HashMap<Character,Integer> map=new HashMap<Character,Integer>();
 	
 	public static long calculate1(String s) {

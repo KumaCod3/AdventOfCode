@@ -3,7 +3,7 @@ import java.util.List;
 
 import program.Read;
 
-public class Day07_2021 {
+public class Day7_2021 {
 	public static long calculate1(String s) {
 		List<Integer> lista=Read.intVirList(s);
 		int fin=1000000;

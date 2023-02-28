@@ -2,7 +2,7 @@ package aOc22;
 import java.util.ArrayList;
 import program.Read;
 
-public class Day01_2022 {
+public class Day1_2022 {
 	public static long calculate1(String s) {
 		ArrayList<int[]> lista = Read.simp(s);
 		int max1=0;
