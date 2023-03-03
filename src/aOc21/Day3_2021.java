@@ -73,7 +73,7 @@ public class Day3_2021 {
 							temp.add(i);
 						}
 					}
-					System.out.println("OXY val: " + Arrays.toString(oxy));
+	//				System.out.println("OXY val: " + Arrays.toString(oxy));
 					listaO.clear();
 					for (int[] i : temp) {
 						listaO.add(i);
@@ -105,10 +105,8 @@ public class Day3_2021 {
 					}
 					temp.clear();
 					ripC = ripC + 1;
-					System.out.println(" lista Co2: ");
-					for (int[] i : listaC) {
-						System.out.println(Arrays.toString(i));
-					}
+//					System.out.println(" lista Co2: ");
+
 
 					if (listaC.size() <= 1) {
 						t = 5;
@@ -121,9 +119,9 @@ public class Day3_2021 {
 				o2=Tool.binToDec(ossigeno);
 				co2=Tool.binToDec(anidride);
 				fin = o2 * co2;
-				System.out.println(
-						"rimasto O2: " + Arrays.toString(listaO.get(0)) + " rimasto Co2: " + Arrays.toString(listaC.get(0)));
-				System.out.println("Risultato: " + fin);
+//				System.out.println(
+//						"rimasto O2: " + Arrays.toString(listaO.get(0)) + " rimasto Co2: " + Arrays.toString(listaC.get(0)));
+//				System.out.println("Risultato: " + fin);
 				
 				
 				

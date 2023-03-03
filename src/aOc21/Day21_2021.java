@@ -100,7 +100,7 @@ public class Day21_2021 {
 		roll.add(inizio);
 		
 		while(roll.size()>0) {
-			System.out.println("Giro: "+t+" dimensione: "+roll.size());
+//			System.out.println("Giro: "+t+" dimensione: "+roll.size());
 			for (long[] rr:roll) {
 				if (t%2!=0) {
 					for (int y:possibility) {

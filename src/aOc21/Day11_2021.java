@@ -26,7 +26,7 @@ public class Day11_2021 {
 			}
 			giri++;
 			int ress=rip-giri;
-			System.out.println("Restano: "+ress);
+//			System.out.println("Restano: "+ress);
 		}
 		return (long) obj.cont;
 	}

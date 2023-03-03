@@ -128,12 +128,7 @@ public class Day13_2021 {
 						ris++;
 					}
 				}
-		// print results
-//				System.out.println("Paper: ");
-//				for (char[] a : fin) {
-//					System.out.println(Arrays.toString(a));
-//				}
-//				System.out.println("Total points: " + ris);
+
 				Show fine=new Show(fin);
 				fine.setVisible(true);
 		

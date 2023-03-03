@@ -43,31 +43,4 @@ public class Day22_2021 {
 		
 		return (long) on.size();
 	}
-	
-/*	private static void aggiungi(long[] x) {
-		boolean tr=true;
-		for (long[] cor:on.keySet()) {
-			if (Arrays.equals(cor,x)) {
-				tr=false;
-			}
-		}
-		if (tr) {
-			on.put(x,3);
-		}
-	}
-	
-	private static void togli(long[] x) {
-		try {
-			for (long[] cor:on.keySet()) {
-				System.out.println("provo a togliere "+Arrays.toString(x)+" da "+Arrays.toString(cor));
-				if (Arrays.equals(cor,x)) {
-					on.remove(cor);
-					System.out.println("tolto");
-				}
-			}
-		} catch (Exception e) {
-			// empty
-			
-		}
-	}*/
 }

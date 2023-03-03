@@ -1,14 +1,11 @@
 package aOc21;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 import program.Read;
 
 public class Day11_2021obj {
 	int cont = 0;
 	List<int[]> input;
-	Scanner sc = new Scanner(System.in);
 
 	public Day11_2021obj(String s) {
 		input = Read.intArList(s);
@@ -101,13 +98,6 @@ public class Day11_2021obj {
 		}
 	}
 
-// print
-	public void print() {
-		for (int[] a : input) {
-			System.out.println(Arrays.toString(a));
-		}
-	}
-
 // check if absolute 
 	public boolean azzera() {
 		int quanti = 0;
@@ -120,7 +110,7 @@ public class Day11_2021obj {
 			}
 		}
 		int tott = (input.size() * input.get(0).length);
-		System.out.println("flash " + quanti + " su " + tott);
+//		System.out.println("flash " + quanti + " su " + tott);
 		if (quanti == tott) {
 			return true;
 		}

@@ -12,7 +12,7 @@ public class Day4_2021 {
 		int[][] win = new int[5][5];
 		
 		String[] inp=s.split("\\n\\n");
-		System.out.println("dovrebbe essere alto: " +inp.length);
+//		System.out.println("dovrebbe essere alto: " +inp.length);
 		String line = inp[0].trim();
 		String[] numbers = line.split(",");
 		int[] pescati = new int[numbers.length];
