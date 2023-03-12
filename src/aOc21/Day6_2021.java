@@ -1,35 +1,21 @@
 package aOc21;
 import java.util.LinkedList;
 import java.util.List;
-
 import program.Read;
-import program.Tool;
 
 public class Day6_2021 {
+	private static final int DAY1=80;
+	private static final int DAY2=256;
+	
 	public static long calculate1(String s) {
-		List<Integer> lantern = Read.intVirList(s);
-		int t=0;
-		
-		for (int p = 0; p < 80; p++) {
-			for (int i = 0; i < lantern.size(); i++) {
-				if (lantern.get(i) == 0) {
-					t++;
-					lantern.set(i, 6);
-				} else {
-					lantern.set(i, lantern.get(i) - 1);
-				}
-			}
-			for (int u = 0; u < t; u++) {
-				lantern.add(8);
-			}
-			t = 0;
-		}
-		int fin=lantern.size();
-		Tool.bell();
-		return (long) fin;
+		return calculate(s, DAY1);
 	}
 	
 	public static long calculate2(String s) {
+		return calculate(s, DAY2);
+	}
+	
+	public static long calculate(String s, int days) {
 		List<Integer> lantern = Read.intVirList(s);
 		long[] groupA = { 1, 0 };
 		long[] groupB = { 2, 0 };
@@ -42,7 +28,6 @@ public class Day6_2021 {
 		long[] babyB = { 0, 0 };
 		long bb = 0;
 		long aa = 0;
-		int days = 256;
 		long x=1;
 		int t = 0;
 		LinkedList<long[]> pool = new LinkedList<long[]>();
