@@ -24,10 +24,9 @@ public class Day6_2021 {
 		long[] groupE = { 5, 0 };
 		long[] groupF = { 6, 0 };
 		long[] groupG = { 0, 0 };
-		long[] babyA = { 1, 0 };
-		long[] babyB = { 0, 0 };
+		long[] groupH = { 7, 0 };
+		long[] groupI = { 8, 0 };
 		long bb = 0;
-		long aa = 0;
 		long x=1;
 		int t = 0;
 		LinkedList<long[]> pool = new LinkedList<long[]>();
@@ -58,34 +57,24 @@ public class Day6_2021 {
 		pool.add(groupE);
 		pool.add(groupF);
 		pool.add(groupG);
+		pool.add(groupH);
+		pool.add(groupI);
 
 // FACCIO PASSARE GIORNI
 		while (t < days) {
 			for (long[] u : pool) {
 				u[0] = u[0] - x;
 				if (u[0] < 0) {
-					u[0] = 6;
+					u[0] = 8;
 					bb = u[1];
 				}
 
 			}
-			babyA[0] = babyA[0] - x;
-			babyB[0] = babyB[0] - x;
-			if (babyA[0] < 0) {
-				aa = babyA[1];
-				babyA[0] = 1;
-				babyA[1] = bb;
-			} else if (babyB[0] < 0) {
-				aa = babyB[1];
-				babyB[0] = 1;
-				babyB[1] = bb;
-			}
 			for (long[] u : pool) {
 				if (u[0] == 6) {
-					u[1] = u[1] + aa;
+					u[1] = u[1] + bb;
 				}
 			}
-			aa = 0;
 			bb = 0;
 			t++;
 		}
@@ -93,8 +82,7 @@ public class Day6_2021 {
 		for (long[] u : pool) {
 			tot = tot + u[1];
 		}
-		tot = tot + babyB[1] + babyA[1];
-
+		
 		return tot;
 	}
 }
