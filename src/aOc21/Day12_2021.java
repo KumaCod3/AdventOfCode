@@ -1,15 +1,16 @@
 package aOc21;
 import java.util.ArrayList;
 import java.util.LinkedList;
-
 import program.Read;
 import program.Tool;
 
 public class Day12_2021 {
+	static LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
+
 	public static long calculate1(String s) {
+		path.clear();
 		ArrayList<String[]> input=Read.copList(s);
 		ArrayList<String[]> inn=new ArrayList<String[]>();
-		LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
 		ArrayList<String> firstPath=new ArrayList<String>();	// first path
@@ -20,18 +21,15 @@ public class Day12_2021 {
 // add inverse direction
 		for (String[] a:input){
 			inn.add(a);
-			boolean ce=true;
-			if (a[0].equals("start")||a[1].equals("end")){
-				ce=false;
-			}
-			if (ce){
-				String[] tt= {a[1],a[0]};
-				inn.add(tt);
-			}
+			String[] tt= {a[1],a[0]};
+			inn.add(tt);
 		}
 		
 		input.clear();
 		for (String[] a:inn){
+			if (a[1].equals("start")||a[0].equals("end")){
+				continue;
+			}
 			input.add(a);
 		}
 		
@@ -67,9 +65,9 @@ public class Day12_2021 {
 	}
 	
 	public static long calculate2(String s) {
+		path.clear();
 		ArrayList<String[]> input=Read.copList(s);
 		ArrayList<String[]> inn=new ArrayList<String[]>();
-		LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
 		ArrayList<String> firstPath=new ArrayList<String>();	// first path
@@ -80,23 +78,22 @@ public class Day12_2021 {
 // add inverse directions
 		for (String[] a:input){
 			inn.add(a);
-			boolean ce=true;
-			if (a[0].equals("start")||a[1].equals("end")){
-				ce=false;
-			}
-			if (ce){
-				String[] tt= {a[1],a[0]};
-				inn.add(tt);
-			}
+			String[] tt= {a[1],a[0]};
+			inn.add(tt);
 		}
 		
 		input.clear();
 		for (String[] a:inn){
+			if (a[1].equals("start")||a[0].equals("end")){
+				continue;
+			}
 			input.add(a);
 		}
 
-// add a step to every path
+	// add a step to every path (and separate the ended or wrong ones)
 		while (path.size()>0){
+			System.out.println("Path sixe "+path.size());
+			System.out.println("fin sixe "+finn.size());
 			for (ArrayList<String> a:path){
 				for (String[] b:input){
 					if (b[0].equals(a.get(a.size()-1))){
@@ -104,21 +101,10 @@ public class Day12_2021 {
 						for (String ne:a){
 							c.add(ne);
 						}
-						for (String g:aggiungi(b[1], a)){
-							c.add(g);
-						
+						if (doppioBis(b[1], c)==false){
+							c.add(b[1]);
 							if (c.get(c.size()-1).equals("end")){
-								boolean ll=true;
-								for (ArrayList<String> q:finn){
-									if (q==c){
-										ll=false;
-									}
-								}
-								if (ll==true){
-									finn.add(c);
-								}
-							}
-							else if (c.get(c.size()-1).equals("zzz")){
+								finn.add(c);
 							}
 							else {
 								temp.add(c);
@@ -129,15 +115,7 @@ public class Day12_2021 {
 			}
 			path.clear();
 			for (ArrayList<String> d:temp){
-				boolean oo=true;
-				for (ArrayList<String> e:path){
-					if (e==d){
-						oo=false;
-					}
-				}
-				if (check(d)&&oo==true){
-					path.add(d);
-				}
+				aggiungi(d);
 			}
 			temp.clear();
 		}
@@ -146,65 +124,23 @@ public class Day12_2021 {
 		return (long) finn.size();
 	}
 	
-	
-	
-// check if there is a double already	
-	public static boolean check(ArrayList<String> d){
-		boolean ck=true;
-		for (String a:d){
-			if (a.equals("zzz")){
-				ck=false;
-			}
-		}
-		return ck;
-	}
-
 // add next step and signal double
-	public static ArrayList<String> aggiungi(String u,ArrayList<String> c){
-	//	char x=u.charAt(0);
-		ArrayList<String> a=new ArrayList<String>();
-		boolean dop=false;
-		boolean ttt=false;
-		if (u.charAt(0)>='a'&&u.charAt(0)<='z') {
-			for (String h:c) {
-				if (h.equals("tt")){
-					ttt=true;
-				}
-				if (h.equals(u)){
-					dop=true;
-				}
-			}
-			if (ttt){
-				if (dop){
-					a.add("zzz");
-				}
-				else {
-					a.add(u);
-				}
-			}
-			else {
-				if (dop){
-					a.add("tt");
-					a.add(u);
-				}
-				else {
-					a.add(u);
-				}
+	public static void aggiungi(ArrayList<String> c){
+		boolean tr=true;
+		for (ArrayList<String> s : path) {
+			if (s==c) {
+				tr=false;
+				break;
 			}
 		}
-		else {
-			a.add(u);
+		if (tr) {
+			path.add(c);
 		}
-		return a;
 	}
 	
 	public static boolean doppio(String x,ArrayList<String> c){
 		boolean dop=false;
 		if (x.charAt(0)>='a'&&x.charAt(0)<='z') {
-			for (String h:c) {
-				if (h.charAt(0)=='t'){
-				}
-			}
 			for (String h : c) {
 				if (h.equals(x)){
 					dop=true;
@@ -213,4 +149,20 @@ public class Day12_2021 {
 		}
 		return dop;
 	}
+	
+	public static boolean doppioBis(String x,ArrayList<String> c){
+		boolean cop=false;
+		for (int i=0;i<c.size();i++) {
+			ArrayList<String> tt=new ArrayList<String>();
+			tt.addAll(c);
+			tt.remove(i);
+			cop=doppio(c.get(i),tt);
+			if (cop) {
+				break;
+			}
+		}
+		boolean ne=doppio(x,c);
+		return ne&&cop;
+	}
+	
 }
