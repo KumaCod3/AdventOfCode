@@ -12,42 +12,29 @@ public class Day12_2021 {
 		LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
-		ArrayList<String> start=new ArrayList<String>();
-		String star="start";
-		start.add(star);
-		path.add(start);
+		ArrayList<String> firstPath=new ArrayList<String>();	// first path
+		firstPath.add("start");	// add start to first path
+		path.add(firstPath);	// add first path to paths
 
 
 // add inverse direction
 		for (String[] a:input){
-			boolean ce=false;
+			inn.add(a);
+			boolean ce=true;
 			if (a[0].equals("start")||a[1].equals("end")){
-				ce=true;
+				ce=false;
 			}
-			if (ce==false){
-				String[] tt=new String[2];
-				for (int i=0;i<2;i++){
-					tt[i]=a[a.length-1-i];
-				}
+			if (ce){
+				String[] tt= {a[1],a[0]};
 				inn.add(tt);
 			}
 		}
 		
-// delete road to -start or from end-
-		for (String[] a:input){
-			boolean ck=false;
-			if (a[0].equals("end")||a[1].equals("start")){
-				ck=true;
-			}
-			if (ck==false){
-				inn.add(a);
-			}
-		}
 		input.clear();
 		for (String[] a:inn){
 			input.add(a);
 		}
-
+		
 // add a step to every path (and separate the ended or wrong ones)
 		while (path.size()>0){
 			for (ArrayList<String> a:path){
@@ -74,12 +61,8 @@ public class Day12_2021 {
 				path.add(d);
 			}
 			temp.clear();
-//			t++;
 		}
-		
-		
-		
-		
+
 		return (long) finn.size();
 	}
 	
@@ -89,36 +72,24 @@ public class Day12_2021 {
 		LinkedList<ArrayList<String>> path=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
 		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
-		ArrayList<String> start=new ArrayList<String>();
-		String sta="start";
-		start.add(sta);
-		path.add(start);
+		ArrayList<String> firstPath=new ArrayList<String>();	// first path
+		firstPath.add("TRUE");
+		firstPath.add("start");	// add start to first path
+		path.add(firstPath);	// add first path to paths
 
 // add inverse directions
 		for (String[] a:input){
-			boolean ce=false;
+			inn.add(a);
+			boolean ce=true;
 			if (a[0].equals("start")||a[1].equals("end")){
-				ce=true;
+				ce=false;
 			}
-			if (ce==false){
-				String[] tt=new String[2];
-				for (int i=0;i<2;i++){
-					tt[i]=a[a.length-1-i];
-				}
+			if (ce){
+				String[] tt= {a[1],a[0]};
 				inn.add(tt);
 			}
 		}
 		
-// delete road to -start or from end-
-		for (String[] a:input){
-			boolean ck=false;
-			if (a[0].equals("end")||a[1].equals("start")){
-				ck=true;
-			}
-			if (ck==false){
-				inn.add(a);
-			}
-		}
 		input.clear();
 		for (String[] a:inn){
 			input.add(a);
