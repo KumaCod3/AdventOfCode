@@ -9,11 +9,11 @@ public class Day12_2021 {
 
 	public static long calculate1(String s) {
 		path.clear();
-		ArrayList<String[]> input=Read.copList(s);
-		ArrayList<String[]> inn=new ArrayList<String[]>();
-		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
-		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
-		ArrayList<String> firstPath=new ArrayList<String>();	// first path
+		var input=Read.copList(s);
+		var inn=new ArrayList<String[]>();
+		var temp=new LinkedList<ArrayList<String>>();
+		var finn=new LinkedList<ArrayList<String>>();
+		var firstPath=new ArrayList<String>();	// first path
 		firstPath.add("start");	// add start to first path
 		path.add(firstPath);	// add first path to paths
 
@@ -66,11 +66,11 @@ public class Day12_2021 {
 	
 	public static long calculate2(String s) {
 		path.clear();
-		ArrayList<String[]> input=Read.copList(s);
-		ArrayList<String[]> inn=new ArrayList<String[]>();
-		LinkedList<ArrayList<String>> temp=new LinkedList<ArrayList<String>>();
-		LinkedList<ArrayList<String>> finn=new LinkedList<ArrayList<String>>();
-		ArrayList<String> firstPath=new ArrayList<String>();	// first path
+		var input=Read.copList(s);
+		var inn=new ArrayList<String[]>();
+		var temp=new LinkedList<ArrayList<String>>();
+		var finn=new LinkedList<ArrayList<String>>();
+		var firstPath=new ArrayList<String>();	// first path
 		firstPath.add("TRUE");
 		firstPath.add("start");	// add start to first path
 		path.add(firstPath);	// add first path to paths
@@ -92,12 +92,12 @@ public class Day12_2021 {
 
 	// add a step to every path (and separate the ended or wrong ones)
 		while (path.size()>0){
-			System.out.println("Path sixe "+path.size());
-			System.out.println("fin sixe "+finn.size());
+//			System.out.println("Path sixe "+path.size());
+//			System.out.println("fin sixe "+finn.size());
 			for (ArrayList<String> a:path){
 				for (String[] b:input){
 					if (b[0].equals(a.get(a.size()-1))){
-						ArrayList<String> c=new ArrayList<String>();
+						var c=new ArrayList<String>();
 						for (String ne:a){
 							c.add(ne);
 						}

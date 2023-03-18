@@ -21,12 +21,9 @@ public class Day11_2021 {
 				}
 			}
 			if (obj.azzera()) {
-//				gg = giri + 1;
 				break;
 			}
 			giri++;
-			int ress=rip-giri;
-//			System.out.println("Restano: "+ress);
 		}
 		return (long) obj.cont;
 	}

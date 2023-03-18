@@ -2,8 +2,6 @@ package aOc21;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.List;
-
 import program.Read;
 import program.Tool;
 
@@ -11,10 +9,10 @@ public class Day9_2021 {
 	private static HashSet<int[]> puntiB = new HashSet<int[]>();
 	
 	public static long calculate1(String s) {
-		List<int[]> input = Read.intArList(s);
+		var input = Read.intArList(s);
 		int ris=0;
 		int conta = 0;
-		LinkedList<Integer> basso = new LinkedList<Integer>();
+		var basso = new LinkedList<Integer>();
 		puntiB.clear();
 		
 		// find low points
@@ -95,14 +93,14 @@ public class Day9_2021 {
 	}
 	
 	public static long calculate2(String s) {
-		List<int[]> input = Read.intArList(s);
+		var input = Read.intArList(s);
 		
 		calculate1(s);
 		int numero = puntiB.size();
 
 // find basins
 		int q = 0;
-		LinkedList<int[]> temp = new LinkedList<int[]>();
+		var temp = new LinkedList<int[]>();
 		while (q == 0) {
 			int controllo = puntiB.size();
 			for (int[] a : puntiB) {
@@ -166,4 +164,5 @@ public class Day9_2021 {
 		Tool.bell();
 		return (long) part2;
 	}
+
 }
