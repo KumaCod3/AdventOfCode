@@ -15,7 +15,6 @@ import java.net.URISyntaxException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-
 public class Testa extends JPanel {
 	public Testa(){
 		super();

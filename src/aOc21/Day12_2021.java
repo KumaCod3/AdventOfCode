@@ -1,7 +1,12 @@
 package aOc21;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import javax.swing.SwingWorker;
+
+import program.Main;
 import program.Read;
+import program.Show;
 import program.Tool;
 
 public class Day12_2021 {
@@ -64,7 +69,7 @@ public class Day12_2021 {
 		return (long) finn.size();
 	}
 	
-	public static long calculate2(String s) {
+	public static long calc2(String s) {
 		path.clear();
 		var input=Read.copList(s);
 		var inn=new ArrayList<String[]>();
@@ -165,4 +170,25 @@ public class Day12_2021 {
 		return ne&&cop;
 	}
 	
+	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 2/3 minutes...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc2(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Main.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+	}
 }

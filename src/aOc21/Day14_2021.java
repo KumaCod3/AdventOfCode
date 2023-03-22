@@ -4,9 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-
 import program.Nope;
-import program.Prova;
 import program.Read;
 
 public class Day14_2021 {
@@ -24,7 +22,7 @@ public class Day14_2021 {
 		String fin="";
 		
 		for (int i=0;i<rep;i++) {
-			fin=listalo(cod).stream().map(Prova::insert).reduce((a,b) -> a+b ).orElse("");
+			fin=listalo(cod).stream().map(Day14_2021::insert).reduce((a,b) -> a+b ).orElse("");
 			cod=fin+ultim;
 			System.out.println("giro "+i);
 		}

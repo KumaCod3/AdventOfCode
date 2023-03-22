@@ -224,7 +224,7 @@ public class Read {
 				} else if (y[i].equals("off")) {
 					riga[i] = 0;
 				} else {
-					riga[i] = Long.valueOf(y[i])+Integer.MAX_VALUE;
+					riga[i] = Long.valueOf(y[i]);
 				}
 			}
 			lista.add(riga);

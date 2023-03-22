@@ -1,6 +1,10 @@
 package aOc21;
 import java.util.ArrayList;
 
+import javax.swing.SwingWorker;
+
+import program.Main;
+import program.Show;
 import program.Tool;
 
 public class Day21_2021 {
@@ -86,7 +90,7 @@ public class Day21_2021 {
 		return (long) fin;
 	}
 	
-	public static long calculate2(String s) {
+	public static long calc2(String s) {
 		ok=0;
 		ko=0;
 		String[] righe=s.split("\\n");
@@ -159,5 +163,27 @@ public class Day21_2021 {
 		if (tr==false) {
 			temp.add(tem);
 		}
+	}
+
+	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 15 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc2(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Main.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
 	}
 }

@@ -2,7 +2,12 @@ package aOc21;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
+
+import javax.swing.SwingWorker;
+
+import program.Main;
 import program.Read;
+import program.Show;
 import program.Tool;
 
 public class Day9_2021 {
@@ -92,7 +97,7 @@ public class Day9_2021 {
 		return (long) ris;
 	}
 	
-	public static long calculate2(String s) {
+	public static long calc2(String s) {
 		var input = Read.intArList(s);
 		
 		calculate1(s);
@@ -165,4 +170,25 @@ public class Day9_2021 {
 		return (long) part2;
 	}
 
+	public static long calculate2(String s) {
+		Show ss=new Show("Please waith, this should take an average of 15 seconds...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc2(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Main.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
+	}
 }

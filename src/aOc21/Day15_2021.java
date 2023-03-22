@@ -1,15 +1,20 @@
 package aOc21;
 import java.util.ArrayList;
 import java.util.LinkedList;
+
+import javax.swing.SwingWorker;
+
+import program.Main;
 import program.Nope;
 import program.Read;
+import program.Show;
 
 public class Day15_2021 {
 
 	static LinkedList<int[]> coordinate=new LinkedList<int[]>();
 	static LinkedList<int[]> temp=new LinkedList<int[]>();
 	
-	public static long calculate1(String s) {
+	public static long calc1(String s) {
 		int val=Integer.MAX_VALUE;
 		int cont=0;
 		ArrayList<int[]> input=Read.intArList(s);
@@ -135,5 +140,27 @@ public class Day15_2021 {
 		no.setVisible(true);
 		
 		return (long) 0;
+	}
+
+	public static long calculate1(String s) {
+		Show ss=new Show("Please waith, this should take an average of 1 minute...");
+		ss.setVisible(true);
+		
+		SwingWorker<Long, Void> worker = new SwingWorker<Long, Void>() { @Override
+				    public Long doInBackground() {
+						return calc1(s);
+			    }
+		
+			    @Override
+			    public void done() {
+			    	 try {
+			        	 Main.resulT.setText(""+get());
+			        	 ss.dispose();
+			        	 
+			         } catch (Exception ignore) {}
+			    }
+			};
+		worker.execute();
+		return 0;
 	}
 }

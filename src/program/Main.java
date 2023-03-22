@@ -204,7 +204,9 @@ public class Main {
 			    	risultatoE.setText("(year 202"+yea+") Your result for day "+day+" part "+part+" is: ");
 		    	}
 		    	else {
-		    		
+//		    		ris=Prova.calculate1(ret);
+//		    		resulT.setText(""+ris);
+//			    	risultatoE.setText("Your result for PROVA is: ");
 		    	}
 			}
 		});
