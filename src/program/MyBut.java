@@ -67,7 +67,6 @@ public class MyBut extends JButton{
 				pressLoc=me.getPoint();
 				timerPress.setDelay(0);
 				timerPress.start();
-				
 			}
 		});
 		timer=new Timer(40, new ActionListener() { 
