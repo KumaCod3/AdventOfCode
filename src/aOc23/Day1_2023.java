@@ -7,6 +7,7 @@ public class Day1_2023 {
 //		ArrayList<int[]> lista = Read.simp(s);
 		int max1=888;
 		
+		
 		return (long) max1;
 	}
 	public static long calculate2(String s) {
