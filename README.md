@@ -1,12 +1,12 @@
 # Pucchosa-AoC
 
-## Advent of Code 2022 in **Java** (and 2021)
+## Advent of Code 2023 in **Java** (and 2022, 2021)
 
 Hi, I'm learning **Java** and I decided to try to participate in the Advent of Code 2022.
 I decided to add a GUI, and then I decided to put AoC 2022 and 2021 together, so I'm implementing my old solutions inside my new GUI....
 So, I have all the solutions for 2022 and some for 2021 (I won't go back to complete them and they are still messy).
 
-## If anyone is interested in trying it the simple way:
+## If anyone is interested in trying it the simple way (for solution of 2022 and part of 2021):
 
 =Download the AoC2022.exe file
 
