@@ -622,5 +622,15 @@ public class Read {
 		}
 		return lista;
 	}
+	public static ArrayList<String[]> copList23(String s){
+		ArrayList<String[]> lista= new ArrayList<String[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			String[] rr=a.split(":");
+			String[] riga=rr[1].split("\\|");
+			lista.add(riga);
+		}
+		return lista;
+	}
 }
 
