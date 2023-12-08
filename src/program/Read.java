@@ -527,6 +527,20 @@ public class Read {
 		return lis;
 	}
 	
+	public static ArrayList<String[]> desrt(String s){
+		String[] cut=s.split("\\n");
+		ArrayList<String[]> lis=new ArrayList<String[]>();
+		for (String c:cut) {
+			c=c.replace("=","");
+			c=c.replace("(","");
+			c=c.replace(")","");
+			c=c.replace(",","");
+			c=c.replace("  "," ");
+			String[] riga=c.split(" ");
+			lis.add(riga);
+		}
+		return lis;
+	}
 	
 	public static ArrayList<Integer> tetris(String s){
 		ArrayList<Integer> lista= new ArrayList<Integer>();
