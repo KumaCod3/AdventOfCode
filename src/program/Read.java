@@ -83,6 +83,20 @@ public class Read {
 		}
 		return lista;
 	}
+	
+	public static ArrayList<int[]> simple(String s){
+		ArrayList<int[]> lista= new ArrayList<int[]>();
+		String[] cut=s.split("\\n");
+		for (String a:cut) {
+			String[] riga=a.split(" ");
+			int[] line=new int[riga.length];
+			for (int i=0;i<riga.length;i++) {
+				line[i]=Integer.parseInt(riga[i]);				
+			}
+			lista.add(line);
+		}
+		return lista;
+	}
 
 	public static ArrayList<Integer> intList(String s){
 		ArrayList<Integer> lista= new ArrayList<Integer>();
