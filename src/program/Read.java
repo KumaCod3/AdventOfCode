@@ -69,6 +69,20 @@ public class Read {
 		}
 		return lista;
 	}
+	public static char[][] pips(String s){
+		String[] cut=s.split("\\n");
+		char[][] lista=new char[cut.length][];
+		for (int j=0;j<lista.length;j++) {
+			String g=cut[j];
+			char[] riga= new char[g.length()];
+			for (int i=0;i<g.length();i++) {
+				char a=g.charAt(i);
+				riga[i]=a;
+			}
+			lista[j]=(riga);
+		}
+		return lista;
+	}
 	
 	public static ArrayList<int[]> simp(String s){
 		ArrayList<int[]> lista= new ArrayList<int[]>();
