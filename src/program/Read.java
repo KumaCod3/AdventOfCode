@@ -56,6 +56,26 @@ public class Read {
 		return lista;
 	}
 	
+	
+	public static ArrayList<ArrayList<char[]>> copListOfLis(String s){
+		ArrayList<ArrayList<char[]>> lista= new ArrayList<ArrayList<char[]>>();
+		String[] cut=s.split("\\n\\n");
+		for (String a:cut) {
+			ArrayList<char[]> line= new ArrayList<char[]>();
+			String[] righe=a.split("\\n");
+			for (String riga:righe) {
+				char[] ri= new char[riga.length()];
+				for (int i=0;i<ri.length;i++) {
+					char c=riga.charAt(i);
+					ri[i]=c;
+				}
+				line.add(ri);
+			}
+			lista.add(line);
+		}
+		return lista;
+	}
+	
 	public static ArrayList<char[]> copListCh(String s){
 		ArrayList<char[]> lista= new ArrayList<char[]>();
 		String[] cut=s.split("\\n");
