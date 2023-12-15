@@ -694,5 +694,13 @@ public class Read {
 		}
 		return lista;
 	}
+	public static ArrayList<String> singvir(String s){
+		ArrayList<String> lista= new ArrayList<String>();
+		String[] cut=s.split(",");
+		for (String a:cut) {
+			lista.add(a);
+		}
+		return lista;
+	}
 }
 
